@@ -273,11 +273,13 @@ export default function TrommeTerms() {
 
 function TrommeLogo({ size = 22 }) {
   return (
-    <svg width={size} height={size} viewBox="0 0 32 32" fill="none">
-      <rect width="32" height="32" rx="7" fill="#1d1d1f" />
-      <circle cx="16" cy="16" r="6.5" stroke="#fff" strokeWidth="1.6" fill="none" />
-      <circle cx="16" cy="16" r="1.6" fill="#fff" />
-    </svg>
+    <img
+      src="/apple-touch-icon.png"
+      alt="Tromme"
+      width={size}
+      height={size}
+      style={{ borderRadius: '22%', display: 'block' }}
+    />
   );
 }
 
