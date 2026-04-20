@@ -284,7 +284,7 @@ export default function TrommeLanding() {
             </a>
           </div>
           <p className="text-[12px] mt-6" style={{ color: '#86868b' }}>
-            Requires iOS 16 or later. Plex Media Server required.
+            Requires iOS/iPadOS 26 or later. A Plex Media Server is required.
           </p>
         </div>
       </section>
