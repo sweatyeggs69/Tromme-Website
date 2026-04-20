@@ -1,5 +1,4 @@
 name = "tromme-website"
-main = "worker/index.js"
 compatibility_date = "2025-01-15"
 
 [assets]
