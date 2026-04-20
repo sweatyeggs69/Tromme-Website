@@ -1,13 +1,13 @@
 # Tromme Website
 
-Marketing site for Tromme, built as a Vite + React SPA and deployed to **Cloudflare Workers** via the Workers Static Assets binding.
+Marketing site for Tromme, built as a Vite + React SPA and deployed to **Cloudflare Workers** as a static-assets-only Worker.
 
 ## Stack
 
 - Vite + React 18
 - React Router (for `/` and `/privacy`)
 - Tailwind CSS
-- Cloudflare Workers + Static Assets (`[assets]` binding)
+- Cloudflare Workers Static Assets (no custom Worker script)
 
 ## Project layout
 
@@ -22,9 +22,7 @@ Marketing site for Tromme, built as a Vite + React SPA and deployed to **Cloudfl
 │       └── Privacy.jsx     # "/privacy"
 ├── public/
 │   └── screenshots/        # static images served at /screenshots/*
-├── worker/
-│   └── index.js            # Worker entry — forwards to ASSETS
-├── wrangler.toml           # Cloudflare Workers config
+├── wrangler.toml           # Cloudflare Workers config (assets-only)
 ├── vite.config.js
 ├── tailwind.config.js
 └── postcss.config.js
@@ -37,25 +35,26 @@ npm install
 npm run dev            # Vite dev server on http://localhost:5173
 ```
 
-To run the built site through Wrangler (simulates Workers runtime):
+## Deploy to Cloudflare Workers
+
+Build, then deploy. Vite outputs to `dist/`, and `wrangler.toml` points the assets binding at that directory with SPA fallback enabled:
 
 ```bash
 npm run build
-npm run wrangler:dev
+npx wrangler deploy --assets ./dist --compatibility-date 2026-03-16
 ```
 
-## Deploy to Cloudflare Workers
+Or use the shortcut:
 
-1. Install Wrangler and log in once:
-   ```bash
-   npx wrangler login
-   ```
-2. Build and deploy:
-   ```bash
-   npm run deploy
-   ```
+```bash
+npm run deploy
+```
 
-`npm run deploy` runs `vite build` (which outputs to `dist/`) and then `wrangler deploy`. The Worker in `worker/index.js` simply forwards every request to the `ASSETS` binding, and `wrangler.toml` sets `not_found_handling = "single-page-application"` so client-side routes (e.g. `/privacy`) are served `index.html` on a hard refresh.
+### Notes
+
+- `not_found_handling = "single-page-application"` in `wrangler.toml` makes client-side routes (e.g. `/privacy`) fall back to `index.html` on a hard refresh. That setting must live in `wrangler.toml` — there is no CLI flag for it.
+- If you run `wrangler deploy` without `--assets`, it picks up the `[assets].directory` value from `wrangler.toml`, which is also `./dist`. The `--assets ./dist` flag is optional but harmless.
+- Don't run `wrangler deploy --assets .` from the repo root — that would upload the source tree instead of the built site.
 
 ## Custom domain
 
