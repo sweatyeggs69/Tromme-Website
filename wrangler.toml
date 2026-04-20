@@ -1,5 +1,5 @@
 name = "tromme-website"
-compatibility_date = "2026-03-16"
+compatibility_date = "2025-01-15"
 
 [assets]
 directory = "./dist"
