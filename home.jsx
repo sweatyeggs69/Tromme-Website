@@ -1,0 +1,498 @@
+import React, { useState, useEffect } from 'react';
+
+export default function TrommeLanding() {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  return (
+    <div
+      className="min-h-screen w-full"
+      style={{
+        background: '#fbfbfd',
+        color: '#1d1d1f',
+        fontFamily: '-apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif',
+        WebkitFontSmoothing: 'antialiased',
+      }}
+    >
+      <style>{`
+        html { scroll-behavior: smooth; }
+        *::selection { background: #0071e3; color: #fff; }
+        .tromme-display {
+          font-weight: 600;
+          letter-spacing: -0.022em;
+          line-height: 1.05;
+        }
+        .tromme-subheading {
+          font-weight: 400;
+          letter-spacing: -0.003em;
+          line-height: 1.3;
+          color: #86868b;
+        }
+      `}</style>
+
+      {/* Nav */}
+      <nav
+        className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+        style={{
+          background: scrolled ? 'rgba(251,251,253,0.8)' : 'rgba(251,251,253,0.6)',
+          backdropFilter: 'saturate(180%) blur(20px)',
+          WebkitBackdropFilter: 'saturate(180%) blur(20px)',
+          borderBottom: '0.5px solid rgba(0,0,0,0.08)',
+        }}
+      >
+        <div className="max-w-[980px] mx-auto px-5 h-11 flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <TrommeLogo size={20} />
+            <span className="text-[17px]" style={{ fontWeight: 500, letterSpacing: '-0.01em' }}>
+              Tromme
+            </span>
+          </div>
+          <div className="hidden md:flex items-center gap-7 text-[12px]" style={{ color: '#1d1d1f', opacity: 0.88 }}>
+            <a href="#overview" className="hover:opacity-60 transition-opacity">Overview</a>
+            <a href="#features" className="hover:opacity-60 transition-opacity">Features</a>
+            <a href="#carplay" className="hover:opacity-60 transition-opacity">CarPlay</a>
+            <a href="#download" className="hover:opacity-60 transition-opacity">Download</a>
+          </div>
+          <a
+            href="#download"
+            className="text-[12px] px-3 py-1 rounded-full transition-all"
+            style={{
+              background: '#0071e3',
+              color: '#fff',
+              fontWeight: 400,
+            }}
+          >
+            Download
+          </a>
+        </div>
+      </nav>
+
+      {/* HERO */}
+      <section id="overview" className="pt-28 pb-20 px-5">
+        <div className="max-w-[980px] mx-auto text-center">
+          <h1
+            className="tromme-display mx-auto"
+            style={{
+              fontSize: 'clamp(40px, 7vw, 80px)',
+              fontWeight: 600,
+            }}
+          >
+            Tromme.
+          </h1>
+          <h2
+            className="tromme-display mx-auto mt-2"
+            style={{
+              fontSize: 'clamp(28px, 4.5vw, 56px)',
+              fontWeight: 600,
+              color: '#86868b',
+            }}
+          >
+            Your Plex music, at last.
+          </h2>
+          <p
+            className="tromme-subheading mx-auto mt-5"
+            style={{
+              fontSize: 'clamp(19px, 2vw, 24px)',
+              maxWidth: '640px',
+            }}
+          >
+            A dedicated music player for Plex Media Server.
+            Lossless streaming, Magic Mix, CarPlay — no Plex Pass required.
+          </p>
+
+          <div className="flex flex-wrap items-center justify-center gap-4 mt-8">
+            <a
+              href="#download"
+              className="text-[17px] transition-opacity hover:opacity-85"
+              style={{
+                color: '#0071e3',
+                fontWeight: 400,
+                letterSpacing: '-0.01em',
+              }}
+            >
+              Download on the App Store ›
+            </a>
+            <a
+              href="#features"
+              className="text-[17px] transition-opacity hover:opacity-85"
+              style={{
+                color: '#0071e3',
+                fontWeight: 400,
+                letterSpacing: '-0.01em',
+              }}
+            >
+              Learn more ›
+            </a>
+          </div>
+
+          {/* Hero screenshot */}
+          <ScreenshotSlot
+            label="HERO SCREENSHOT"
+            description="Now Playing screen — your main hero shot"
+            aspect="9/16"
+            className="mt-16 mx-auto"
+            style={{ maxWidth: '360px' }}
+            id="hero"
+          />
+        </div>
+      </section>
+
+      {/* LIBRARY — FULL WIDTH LIGHT CARD */}
+      <section id="features" className="px-5 pb-6">
+        <SectionCard>
+          <div className="px-6 pt-16 pb-4 md:pt-20 text-center">
+            <EyebrowLabel>Your library</EyebrowLabel>
+            <h2
+              className="tromme-display mx-auto mt-3"
+              style={{ fontSize: 'clamp(32px, 4.5vw, 56px)', fontWeight: 600, maxWidth: '720px' }}
+            >
+              Browse everything.
+              <br />
+              <span style={{ color: '#86868b' }}>Find anything.</span>
+            </h2>
+            <p
+              className="tromme-subheading mx-auto mt-4"
+              style={{ fontSize: '19px', maxWidth: '560px' }}
+            >
+              Artists, albums, songs, and playlists — organized the way you expect.
+              Search across your entire collection instantly.
+            </p>
+          </div>
+          <ScreenshotSlot
+            label="LIBRARY SCREENSHOT"
+            description="Artists / Albums / Library browsing view"
+            aspect="9/16"
+            className="mx-auto mt-4"
+            style={{ maxWidth: '300px' }}
+            id="library"
+          />
+        </SectionCard>
+      </section>
+
+      {/* TWO UP — PLAYBACK + DISCOVER */}
+      <section className="px-5 pb-6">
+        <div className="max-w-[980px] mx-auto grid md:grid-cols-2 gap-6">
+          <SectionCard small>
+            <div className="px-6 pt-12 pb-4 text-center">
+              <EyebrowLabel>Playback</EyebrowLabel>
+              <h3
+                className="tromme-display mt-2"
+                style={{ fontSize: 'clamp(26px, 3vw, 36px)', fontWeight: 600 }}
+              >
+                Lossless, by default.
+              </h3>
+              <p className="tromme-subheading mt-3" style={{ fontSize: '17px' }}>
+                High-fidelity streaming with ALAC transcoding for your FLAC files.
+                Optional cellular transcoding. Advanced queue management.
+              </p>
+            </div>
+            <ScreenshotSlot
+              label="PLAYBACK SCREENSHOT"
+              description="Queue, settings, or codec detail view"
+              aspect="9/16"
+              className="mx-auto mt-4"
+              style={{ maxWidth: '240px' }}
+              id="playback"
+            />
+          </SectionCard>
+
+          <SectionCard small>
+            <div className="px-6 pt-12 pb-4 text-center">
+              <EyebrowLabel>Discover</EyebrowLabel>
+              <h3
+                className="tromme-display mt-2"
+                style={{ fontSize: 'clamp(26px, 3vw, 36px)', fontWeight: 600 }}
+              >
+                The music keeps going.
+              </h3>
+              <p className="tromme-subheading mt-3" style={{ fontSize: '17px' }}>
+                Magic Mix generates an infinite playlist from what you're playing.
+                Infinite Mode keeps your queue flowing automatically.
+              </p>
+            </div>
+            <ScreenshotSlot
+              label="DISCOVER SCREENSHOT"
+              description="Magic Mix, Infinite Mode, or Favorites view"
+              aspect="9/16"
+              className="mx-auto mt-4"
+              style={{ maxWidth: '240px' }}
+              id="discover"
+            />
+          </SectionCard>
+        </div>
+      </section>
+
+      {/* CARPLAY — DARK SECTION */}
+      <section id="carplay" className="px-5 pb-6">
+        <SectionCard dark>
+          <div className="px-6 pt-16 pb-4 text-center">
+            <EyebrowLabel dark>CarPlay</EyebrowLabel>
+            <h2
+              className="tromme-display mx-auto mt-3"
+              style={{
+                fontSize: 'clamp(32px, 4.5vw, 56px)',
+                fontWeight: 600,
+                maxWidth: '720px',
+                color: '#f5f5f7',
+              }}
+            >
+              Made for the drive.
+            </h2>
+            <p
+              className="mx-auto mt-4"
+              style={{
+                fontSize: '19px',
+                maxWidth: '560px',
+                color: '#a1a1a6',
+                fontWeight: 400,
+                letterSpacing: '-0.003em',
+                lineHeight: 1.3,
+              }}
+            >
+              Home, Artists, Albums, and Playlists tabs. Alphabet-jump for large
+              libraries. Full CarPlay support, built in.
+            </p>
+          </div>
+          <ScreenshotSlot
+            label="CARPLAY SCREENSHOT"
+            description="CarPlay interface — landscape/widescreen"
+            aspect="16/10"
+            className="mx-auto mt-8 mb-4"
+            style={{ maxWidth: '720px' }}
+            dark
+            id="carplay"
+          />
+        </SectionCard>
+      </section>
+
+      {/* FEATURE LIST */}
+      <section className="px-5 py-20">
+        <div className="max-w-[980px] mx-auto">
+          <h2
+            className="tromme-display text-center mx-auto"
+            style={{ fontSize: 'clamp(28px, 3.5vw, 40px)', fontWeight: 600, maxWidth: '720px' }}
+          >
+            Everything you'd want.
+            <br />
+            <span style={{ color: '#86868b' }}>Nothing you wouldn't.</span>
+          </h2>
+
+          <div className="grid md:grid-cols-2 gap-x-10 gap-y-8 mt-14 max-w-[780px] mx-auto">
+            {features.map((f) => (
+              <div key={f.title} className="flex items-start gap-4">
+                <div
+                  className="flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center"
+                  style={{ background: '#0071e3', color: '#fff' }}
+                >
+                  {f.icon}
+                </div>
+                <div>
+                  <h3 className="text-[17px]" style={{ fontWeight: 600, letterSpacing: '-0.01em' }}>
+                    {f.title}
+                  </h3>
+                  <p
+                    className="text-[15px] mt-1"
+                    style={{ color: '#86868b', lineHeight: 1.4, letterSpacing: '-0.003em' }}
+                  >
+                    {f.desc}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FINAL CTA */}
+      <section id="download" className="px-5 py-20 text-center">
+        <div className="max-w-[680px] mx-auto">
+          <h2
+            className="tromme-display mx-auto"
+            style={{ fontSize: 'clamp(36px, 5vw, 56px)', fontWeight: 600 }}
+          >
+            Get Tromme.
+          </h2>
+          <p
+            className="tromme-subheading mx-auto mt-4"
+            style={{ fontSize: '19px' }}
+          >
+            Point it at your Plex server and you're listening in seconds.
+          </p>
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+            <a
+              href="#"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full transition-all hover:opacity-90"
+              style={{
+                background: '#0071e3',
+                color: '#fff',
+                fontSize: '15px',
+                fontWeight: 400,
+              }}
+            >
+              <AppleIcon />
+              Download on the App Store
+            </a>
+          </div>
+          <p className="text-[12px] mt-6" style={{ color: '#86868b' }}>
+            Requires iOS 16 or later. Plex Media Server required.
+          </p>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer
+        className="px-5 py-6 border-t"
+        style={{ borderColor: 'rgba(0,0,0,0.08)', background: '#f5f5f7' }}
+      >
+        <div className="max-w-[980px] mx-auto">
+          <p className="text-[12px]" style={{ color: '#86868b', lineHeight: 1.5 }}>
+            Copyright © 2026 Tromme. All rights reserved. Not affiliated with Plex, Inc.
+            Plex and Plex Media Server are trademarks of Plex, Inc.
+          </p>
+          <div className="flex flex-wrap gap-5 mt-3 text-[12px]" style={{ color: '#424245' }}>
+            <a href="#" className="hover:underline">Privacy Policy</a>
+            <a href="#" className="hover:underline">Terms of Use</a>
+            <a href="#" className="hover:underline">Support</a>
+            <a href="#" className="hover:underline">Contact</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+}
+
+/* ───── Components ───── */
+
+function TrommeLogo({ size = 22 }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 32 32" fill="none">
+      <rect width="32" height="32" rx="7" fill="#1d1d1f" />
+      <circle cx="16" cy="16" r="6.5" stroke="#fff" strokeWidth="1.6" fill="none" />
+      <circle cx="16" cy="16" r="1.6" fill="#fff" />
+    </svg>
+  );
+}
+
+function AppleIcon() {
+  return (
+    <svg width="14" height="16" viewBox="0 0 14 16" fill="currentColor">
+      <path d="M11.6 8.4c0-2.3 1.9-3.4 2-3.4-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.1-2.8.8-3.5.8-.7 0-1.9-.8-3.1-.8C2.1 3.2.6 4.1-.2 5.6c-1.4 2.4-.4 6 1 8 .7 1 1.5 2 2.5 2 1 0 1.4-.6 2.6-.6s1.6.6 2.6.6c1.1 0 1.8-1 2.5-1.9.8-1.1 1.1-2.2 1.1-2.3-.1 0-2.5-1-2.5-3zM9.5 1.9c.6-.7 1-1.7.9-2.7-.8 0-1.8.6-2.4 1.3-.5.6-1 1.6-.9 2.5.9.1 1.8-.5 2.4-1.1z" />
+    </svg>
+  );
+}
+
+function EyebrowLabel({ children, dark }) {
+  return (
+    <div
+      style={{
+        fontSize: '19px',
+        fontWeight: 600,
+        color: dark ? '#a1a1a6' : '#86868b',
+        letterSpacing: '-0.003em',
+      }}
+    >
+      {children}
+    </div>
+  );
+}
+
+function SectionCard({ children, dark, small }) {
+  return (
+    <div
+      className="max-w-[980px] mx-auto rounded-[28px] overflow-hidden"
+      style={{
+        background: dark ? '#1d1d1f' : '#fff',
+        color: dark ? '#f5f5f7' : '#1d1d1f',
+        minHeight: small ? '560px' : '640px',
+      }}
+    >
+      {children}
+    </div>
+  );
+}
+
+function ScreenshotSlot({ label, description, aspect = '9/16', className = '', style = {}, dark, id }) {
+  return (
+    <div className={className} style={style}>
+      <div
+        id={`screenshot-${id}`}
+        className="relative w-full rounded-[18px] overflow-hidden flex items-center justify-center"
+        style={{
+          aspectRatio: aspect,
+          background: dark
+            ? 'linear-gradient(135deg, #2a2a2c 0%, #1d1d1f 100%)'
+            : 'linear-gradient(135deg, #f5f5f7 0%, #e8e8ed 100%)',
+          border: dark ? '0.5px solid rgba(255,255,255,0.1)' : '0.5px solid rgba(0,0,0,0.06)',
+        }}
+      >
+        <div className="text-center px-4">
+          <div
+            className="inline-flex items-center justify-center w-10 h-10 rounded-full mx-auto mb-3"
+            style={{
+              background: dark ? 'rgba(255,255,255,0.08)' : 'rgba(0,0,0,0.05)',
+              color: dark ? '#a1a1a6' : '#86868b',
+            }}
+          >
+            <ImageIcon />
+          </div>
+          <div
+            className="text-[11px]"
+            style={{
+              fontWeight: 600,
+              letterSpacing: '0.08em',
+              color: dark ? '#a1a1a6' : '#86868b',
+              textTransform: 'uppercase',
+            }}
+          >
+            {label}
+          </div>
+          <div
+            className="text-[13px] mt-1.5 max-w-[220px] mx-auto"
+            style={{
+              color: dark ? '#a1a1a6' : '#86868b',
+              lineHeight: 1.4,
+              letterSpacing: '-0.003em',
+              opacity: 0.85,
+            }}
+          >
+            {description}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function ImageIcon() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="3" y="4" width="14" height="12" rx="2" />
+      <circle cx="7.5" cy="8" r="1.2" />
+      <path d="M17 13l-4-4-7 7" />
+    </svg>
+  );
+}
+
+function IconCheck() {
+  return (
+    <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M3 8l3.5 3.5L13 5" />
+    </svg>
+  );
+}
+
+const features = [
+  { title: 'No Plex Pass required', desc: 'Works with any standard Plex account. No subscription needed.', icon: <IconCheck /> },
+  { title: 'Lossless ALAC streaming', desc: 'FLAC files transcoded to lossless ALAC for bit-perfect iOS playback.', icon: <IconCheck /> },
+  { title: 'Magic Mix', desc: 'An infinite playlist generated from the style and genre of your current track.', icon: <IconCheck /> },
+  { title: 'Infinite Mode', desc: 'Keeps the music going by automatically extending your queue.', icon: <IconCheck /> },
+  { title: 'Full CarPlay support', desc: 'Home, Artists, Albums, and Playlists tabs with alphabet-jump navigation.', icon: <IconCheck /> },
+  { title: 'Detailed artist pages', desc: 'Top songs, albums, singles, and EPs — organized the way you think.', icon: <IconCheck /> },
+  { title: 'Codec & genre info', desc: 'See format, bit-depth, and genre details on every album.', icon: <IconCheck /> },
+  { title: 'Cellular-aware', desc: 'Optional cellular transcoding protects your data plan on the go.', icon: <IconCheck /> },
+];
