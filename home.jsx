@@ -299,10 +299,10 @@ export default function TrommeLanding() {
             Plex and Plex Media Server are trademarks of Plex, Inc.
           </p>
           <div className="flex flex-wrap gap-5 mt-3 text-[12px]" style={{ color: '#424245' }}>
-            <a href="#" className="hover:underline">Privacy Policy</a>
+            <a href="/privacy" className="hover:underline">Privacy Policy</a>
             <a href="#" className="hover:underline">Terms of Use</a>
-            <a href="#" className="hover:underline">Support</a>
-            <a href="#" className="hover:underline">Contact</a>
+            <a href="mailto:support@tromme.app" className="hover:underline">Support</a>
+            <a href="mailto:support@tromme.app" className="hover:underline">Contact</a>
           </div>
         </div>
       </footer>
