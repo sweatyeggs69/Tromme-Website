@@ -82,7 +82,7 @@ export default function TrommeLanding() {
               fontWeight: 600,
             }}
           >
-            Tromme.
+            Tromme
           </h1>
           <h2
             className="tromme-display mx-auto mt-2"
@@ -92,7 +92,7 @@ export default function TrommeLanding() {
               color: '#86868b',
             }}
           >
-            Your Plex music, at last.
+            Your Plex music, in native experience.
           </h2>
           <p
             className="tromme-subheading mx-auto mt-5"
@@ -102,7 +102,7 @@ export default function TrommeLanding() {
             }}
           >
             A dedicated music player for Plex Media Server.
-            Lossless streaming, Magic Mix, CarPlay — no Plex Pass required.
+            Lossless streaming, Magic Mix, CarPlay and the best part... no Plex Pass required.
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-4 mt-8">
@@ -141,7 +141,7 @@ export default function TrommeLanding() {
         </div>
       </section>
 
-      {/* LIBRARY — FULL WIDTH LIGHT CARD */}
+      {/* LIBRARY  FULL WIDTH LIGHT CARD */}
       <section id="features" className="px-5 pb-6">
         <SectionCard>
           <div className="px-6 pt-16 pb-4 md:pt-20 text-center">
@@ -158,7 +158,7 @@ export default function TrommeLanding() {
               className="tromme-subheading mx-auto mt-4"
               style={{ fontSize: '19px', maxWidth: '560px' }}
             >
-              Artists, albums, songs, and playlists — organized the way you expect.
+              Artists, albums, songs, and playlists organized the way you expect.
               Search across your entire collection instantly.
             </p>
           </div>
@@ -172,7 +172,7 @@ export default function TrommeLanding() {
         </SectionCard>
       </section>
 
-      {/* TWO UP — PLAYBACK + DISCOVER */}
+      {/* TWO UP  PLAYBACK + DISCOVER */}
       <section className="px-5 pb-6">
         <div className="max-w-[980px] mx-auto grid md:grid-cols-2 gap-6">
           <SectionCard small>
@@ -232,7 +232,7 @@ export default function TrommeLanding() {
           >
             Everything you'd want.
             <br />
-            <span style={{ color: '#86868b' }}>Nothing you wouldn't.</span>
+            <span style={{ color: '#86868b' }}>Apple-like experience.</span>
           </h2>
 
           <div className="grid md:grid-cols-2 gap-x-10 gap-y-10 mt-14 max-w-[780px] mx-auto">
@@ -369,7 +369,7 @@ const features = [
   { title: 'Magic Mix', desc: 'An infinite playlist generated from the style and genre of your current track.' },
   { title: 'Infinite Mode', desc: 'Keeps the music going by automatically extending your queue.' },
   { title: 'Full CarPlay support', desc: 'Home, Artists, Albums, and Playlists tabs with alphabet-jump navigation.' },
-  { title: 'Detailed artist pages', desc: 'Top songs, albums, singles, and EPs — organized the way you think.' },
+  { title: 'Detailed artist pages', desc: 'Top songs, albums, singles, and EPs organized the way you think.' },
   { title: 'Codec & genre info', desc: 'See format, bit-depth, and genre details on every album.' },
   { title: 'Cellular-aware', desc: 'Optional cellular transcoding protects your data plan on the go.' },
 ];
