@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 export default function TrommePrivacy() {
   const [scrolled, setScrolled] = useState(false);
@@ -61,12 +62,12 @@ export default function TrommePrivacy() {
         }}
       >
         <div className="max-w-[980px] mx-auto px-5 h-11 flex items-center justify-between">
-          <a href="/" className="flex items-center gap-2">
+          <Link to="/" className="flex items-center gap-2">
             <TrommeLogo size={20} />
             <span className="text-[17px]" style={{ fontWeight: 500, letterSpacing: '-0.01em', color: '#1d1d1f' }}>
               Tromme
             </span>
-          </a>
+          </Link>
           <div className="hidden md:flex items-center gap-7 text-[12px]" style={{ color: '#1d1d1f', opacity: 0.88 }}>
             <a href="/#overview" className="hover:opacity-60 transition-opacity">Overview</a>
             <a href="/#features" className="hover:opacity-60 transition-opacity">Features</a>
@@ -93,9 +94,9 @@ export default function TrommePrivacy() {
             className="text-[13px]"
             style={{ color: '#86868b', fontWeight: 500, letterSpacing: '0.01em' }}
           >
-            <a href="/" style={{ color: '#86868b' }} className="hover:opacity-70 transition-opacity">
+            <Link to="/" style={{ color: '#86868b' }} className="hover:opacity-70 transition-opacity">
               Tromme
-            </a>
+            </Link>
             <span className="mx-2">›</span>
             <span>Privacy Policy</span>
           </div>
@@ -289,7 +290,7 @@ export default function TrommePrivacy() {
             Plex and Plex Media Server are trademarks of Plex, Inc.
           </p>
           <div className="flex flex-wrap gap-5 mt-3 text-[12px]" style={{ color: '#424245' }}>
-            <a href="/privacy" className="hover:underline">Privacy Policy</a>
+            <Link to="/privacy" className="hover:underline">Privacy Policy</Link>
             <a href="/terms" className="hover:underline">Terms of Use</a>
             <a href="/support" className="hover:underline">Support</a>
             <a href="mailto:support@tromme.app" className="hover:underline">Contact</a>
