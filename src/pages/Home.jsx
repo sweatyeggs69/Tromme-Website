@@ -302,7 +302,7 @@ export default function TrommeLanding() {
           <div className="flex flex-wrap gap-5 mt-3 text-[12px]" style={{ color: '#424245' }}>
             <Link to="/privacy" className="hover:underline">Privacy Policy</Link>
             <Link to="/terms" className="hover:underline">Terms of Use</Link>
-            <a href="mailto:support@tromme.app" className="hover:underline">Support</a>
+            <Link to="/support" className="hover:underline">Support</Link>
             <a href="mailto:support@tromme.app" className="hover:underline">Contact</a>
           </div>
         </div>

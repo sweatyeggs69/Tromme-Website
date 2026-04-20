@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-export default function TrommePrivacy() {
+export default function TrommeSupport() {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -98,31 +98,25 @@ export default function TrommePrivacy() {
               Tromme
             </Link>
             <span className="mx-2">›</span>
-            <span>Privacy Policy</span>
+            <span>Support</span>
           </div>
 
           <h1
             className="tromme-display mt-6"
             style={{ fontSize: 'clamp(36px, 5vw, 56px)', fontWeight: 600 }}
           >
-            Privacy Policy
+            Support
           </h1>
           <p
             className="mt-4 text-[19px]"
             style={{ color: '#86868b', letterSpacing: '-0.003em', lineHeight: 1.4 }}
           >
-            Tromme is designed to respect your privacy. We don't collect your data — because we don't need to.
-          </p>
-          <p
-            className="mt-6 text-[13px]"
-            style={{ color: '#86868b', letterSpacing: '0.01em' }}
-          >
-            Last updated: April 20, 2026
+            Answers to common questions, plus a direct line to us when you need more help.
           </p>
         </div>
       </section>
 
-      {/* KEY POINTS CARD */}
+      {/* CONTACT CARD */}
       <section className="px-5 pb-12">
         <div className="max-w-[720px] mx-auto">
           <div
@@ -130,7 +124,7 @@ export default function TrommePrivacy() {
             style={{ background: '#fff', border: '0.5px solid rgba(0,0,0,0.06)' }}
           >
             <h2
-              className="text-[13px] mb-5"
+              className="text-[13px] mb-4"
               style={{
                 fontWeight: 600,
                 letterSpacing: '0.08em',
@@ -138,140 +132,140 @@ export default function TrommePrivacy() {
                 textTransform: 'uppercase',
               }}
             >
-              The short version
+              Get in touch
             </h2>
-            <div className="space-y-4">
-              <KeyPoint>
-                Tromme does not collect, store, or transmit your personal data.
-              </KeyPoint>
-              <KeyPoint>
-                Your Plex server credentials are stored only on your device.
-              </KeyPoint>
-              <KeyPoint>
-                No analytics. No tracking. No third-party services.
-              </KeyPoint>
-              <KeyPoint>
-                Your music stays between you and your Plex Media Server.
-              </KeyPoint>
-            </div>
+            <p
+              className="text-[22px]"
+              style={{ color: '#1d1d1f', fontWeight: 600, letterSpacing: '-0.01em' }}
+            >
+              Email us at{' '}
+              <a
+                href="mailto:support@tromme.app"
+                style={{ color: '#ff6600', textDecoration: 'none' }}
+              >
+                support@tromme.app
+              </a>
+            </p>
+            <p
+              className="mt-3 text-[15px]"
+              style={{ color: '#86868b', lineHeight: 1.5 }}
+            >
+              We read every message. Please include your iOS version, Plex Media Server
+              version, and a description of what you expected to happen.
+            </p>
           </div>
         </div>
       </section>
 
-      {/* DETAILED POLICY */}
+      {/* CONTENT */}
       <section className="px-5 pb-24">
         <div className="max-w-[720px] mx-auto space-y-14">
 
-          <Section heading="Information we collect">
+          <Section heading="Getting started">
             <div className="tromme-body">
               <p>
-                <strong>We do not collect any personal information.</strong> Tromme is
-                designed to operate entirely on your device and in direct communication
-                with the Plex Media Server that you choose to connect to.
+                <strong>1. Install Tromme</strong> from the App Store on your iPhone or iPad
+                running iOS/iPadOS 26 or later.
               </p>
               <p>
-                There are no accounts to create with Tromme. There is no server
-                infrastructure operated by us that processes your listening activity,
-                library contents, or usage patterns.
+                <strong>2. Sign in to Plex.</strong> Tap <em>Sign in</em> and authenticate
+                directly with Plex. Tromme uses Plex's own sign-in flow — your password
+                is never seen by the app.
+              </p>
+              <p>
+                <strong>3. Pick a server.</strong> Tromme will list the Plex Media Servers
+                available to your account. Choose the one that hosts your music library.
+              </p>
+              <p>
+                <strong>4. Start listening.</strong> Browse by artist, album, song, or
+                playlist — or pull up a Magic Mix from anything that's playing.
               </p>
             </div>
           </Section>
 
-          <Section heading="How Tromme works">
+          <Section heading="Frequently asked questions">
+            <div className="space-y-6">
+              <FAQ question="Do I need Plex Pass?">
+                No. Tromme works with any standard Plex account — no subscription
+                required.
+              </FAQ>
+              <FAQ question="Why can't Tromme see my server?">
+                Make sure your device and Plex Media Server can reach each other on the
+                network. If you're away from home, remote access must be enabled on the
+                server. Signing out and back in will refresh the server list.
+              </FAQ>
+              <FAQ question="Why does a song play at a lower quality on cellular?">
+                Cellular transcoding is optional and can be toggled in Settings. When
+                enabled, Tromme asks your Plex server to transcode audio over cellular
+                to protect your data plan. On Wi-Fi, playback defaults to lossless.
+              </FAQ>
+              <FAQ question="Does Tromme support FLAC?">
+                Yes. FLAC files on your server are transcoded to lossless ALAC for
+                bit-perfect playback on iOS. The original files on your server are not
+                modified.
+              </FAQ>
+              <FAQ question="Does CarPlay work?">
+                Yes. Tromme ships full CarPlay support with Home, Artists, Albums, and
+                Playlists tabs, plus alphabet-jump navigation for large libraries.
+              </FAQ>
+              <FAQ question="What is Magic Mix?">
+                Magic Mix generates an infinite playlist based on the style and genre
+                of the track you're playing. Enable Infinite Mode in the queue and
+                Tromme will keep adding new tracks automatically.
+              </FAQ>
+              <FAQ question="Is my data private?">
+                Yes. Tromme does not collect, store, or transmit any personal data.
+                Your Plex token is stored in the iOS Keychain on your device. See the{' '}
+                <Link to="/privacy">Privacy Policy</Link> for details.
+              </FAQ>
+            </div>
+          </Section>
+
+          <Section heading="Troubleshooting">
             <div className="tromme-body">
               <p>
-                When you sign in to Plex within Tromme, you authenticate directly with
-                Plex's servers using Plex's own authentication flow. Tromme receives an
-                authentication token which is stored securely on your device using the
-                iOS Keychain.
+                <strong>Playback won't start.</strong> Confirm the track plays from
+                another Plex client. If it does, force-quit Tromme and try again.
+                Restarting your Plex Media Server resolves most transient issues.
               </p>
               <p>
-                Once authenticated, Tromme communicates directly with your Plex Media
-                Server to browse your library and stream your music. This traffic does
-                not pass through any servers operated by us.
+                <strong>Library looks empty or out of date.</strong> Your Plex server
+                needs to have finished scanning your music library. Pull to refresh in
+                Tromme after the scan completes.
+              </p>
+              <p>
+                <strong>Can't sign in.</strong> Check that you can sign in at{' '}
+                <a href="https://app.plex.tv" target="_blank" rel="noopener noreferrer">
+                  app.plex.tv
+                </a>{' '}
+                in a browser. If that works but Tromme doesn't, sign out of Tromme and
+                try again.
+              </p>
+              <p>
+                <strong>Still stuck?</strong> Email{' '}
+                <a href="mailto:support@tromme.app">support@tromme.app</a> with your
+                iOS version, Plex Media Server version, and any error messages.
               </p>
             </div>
           </Section>
 
-          <Section heading="Data stored on your device">
+          <Section heading="Feature requests and feedback">
             <div className="tromme-body">
               <p>
-                The following information is stored locally on your device and is never
-                transmitted to us:
-              </p>
-              <p>
-                <strong>Plex authentication token</strong> — stored in the iOS Keychain,
-                used only to communicate with your Plex Media Server.
-              </p>
-              <p>
-                <strong>App preferences</strong> — your settings, favorites, and
-                cellular transcoding preferences, stored in standard iOS app storage.
-              </p>
-              <p>
-                <strong>Cached metadata and artwork</strong> — album art and library
-                metadata may be cached locally to improve performance. This is retrieved
-                from your Plex server, not from us.
-              </p>
-              <p>
-                All of this data is removed when you uninstall Tromme.
+                Tromme is built by listeners, for listeners. If there's a feature you'd
+                love to see, send us a note at{' '}
+                <a href="mailto:support@tromme.app">support@tromme.app</a>. We read
+                every email and the best ideas tend to make it into the app.
               </p>
             </div>
           </Section>
 
-          <Section heading="Analytics and tracking">
+          <Section heading="System requirements">
             <div className="tromme-body">
               <p>
-                Tromme does not use any analytics services, tracking pixels, advertising
-                SDKs, or third-party data collection tools. We don't know when you open
-                the app, what you listen to, or how you use it — and we prefer it that way.
-              </p>
-            </div>
-          </Section>
-
-          <Section heading="Third-party services">
-            <div className="tromme-body">
-              <p>
-                <strong>Plex Media Server.</strong> Tromme connects to Plex on your behalf.
-                Your use of Plex is governed by Plex's own privacy policy, which you can
-                review at{' '}
-                <a href="https://www.plex.tv/about/privacy-legal/privacy-policy/" target="_blank" rel="noopener noreferrer">
-                  plex.tv/about/privacy-legal/privacy-policy
-                </a>.
-              </p>
-              <p>
-                <strong>Apple.</strong> Tromme is distributed through the Apple App Store.
-                Apple may collect information related to app downloads and crashes as
-                part of its platform. This data is not shared with us in a way that
-                identifies individual users.
-              </p>
-            </div>
-          </Section>
-
-          <Section heading="Children's privacy">
-            <div className="tromme-body">
-              <p>
-                Tromme is not directed at children under 13. Because we do not collect
-                personal information from anyone, we do not knowingly collect information
-                from children.
-              </p>
-            </div>
-          </Section>
-
-          <Section heading="Changes to this policy">
-            <div className="tromme-body">
-              <p>
-                If this policy changes, the updated version will be posted on this page
-                with a revised "Last updated" date. Material changes will be highlighted
-                in the app's release notes.
-              </p>
-            </div>
-          </Section>
-
-          <Section heading="Contact">
-            <div className="tromme-body">
-              <p>
-                Questions about this privacy policy? Reach out at{' '}
-                <a href="mailto:support@tromme.app">support@tromme.app</a>.
+                Tromme requires iOS or iPadOS 26 or later and a Plex Media Server that
+                you can sign in to. Any standard Plex account works — a Plex Pass
+                subscription is not required.
               </p>
             </div>
           </Section>
@@ -324,18 +318,17 @@ function Section({ heading, children }) {
   );
 }
 
-function KeyPoint({ children }) {
+function FAQ({ question, children }) {
   return (
-    <div className="flex items-start gap-3">
-      <div
-        className="flex-shrink-0 mt-1.5 w-1.5 h-1.5 rounded-full"
-        style={{ background: '#ff6600' }}
-      />
-      <div
-        className="text-[16px]"
-        style={{ color: '#1d1d1f', letterSpacing: '-0.003em', lineHeight: 1.5, fontWeight: 500 }}
+    <div>
+      <h3
+        className="text-[17px]"
+        style={{ fontWeight: 600, letterSpacing: '-0.01em', color: '#1d1d1f', marginBottom: 6 }}
       >
-        {children}
+        {question}
+      </h3>
+      <div className="tromme-body">
+        <p>{children}</p>
       </div>
     </div>
   );
