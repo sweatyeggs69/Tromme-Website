@@ -21,7 +21,7 @@ export default function TrommeLanding() {
     >
       <style>{`
         html { scroll-behavior: smooth; }
-        *::selection { background: #0071e3; color: #fff; }
+        *::selection { background: #ff6600; color: #fff; }
         .tromme-display {
           font-weight: 600;
           letter-spacing: -0.022em;
