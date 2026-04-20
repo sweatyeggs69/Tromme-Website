@@ -55,7 +55,6 @@ export default function TrommeLanding() {
           <div className="hidden md:flex items-center gap-7 text-[12px]" style={{ color: '#1d1d1f', opacity: 0.88 }}>
             <a href="#overview" className="hover:opacity-60 transition-opacity">Overview</a>
             <a href="#features" className="hover:opacity-60 transition-opacity">Features</a>
-            <a href="#carplay" className="hover:opacity-60 transition-opacity">CarPlay</a>
             <a href="#download" className="hover:opacity-60 transition-opacity">Download</a>
           </div>
           <a
@@ -131,14 +130,13 @@ export default function TrommeLanding() {
           </div>
 
           {/* Hero screenshot */}
-          <ScreenshotSlot
-            label="HERO SCREENSHOT"
-            description="Now Playing screen — your main hero shot"
-            aspect="9/16"
-            className="mt-16 mx-auto"
-            style={{ maxWidth: '360px' }}
-            id="hero"
-          />
+          <div className="mt-16 mx-auto" style={{ maxWidth: '360px' }}>
+            <img
+              src="/screenshots/hero-portrait.png"
+              alt="Tromme Now Playing screen"
+              className="w-full rounded-[18px] block"
+            />
+          </div>
         </div>
       </section>
 
@@ -163,14 +161,13 @@ export default function TrommeLanding() {
               Search across your entire collection instantly.
             </p>
           </div>
-          <ScreenshotSlot
-            label="LIBRARY SCREENSHOT"
-            description="Artists / Albums / Library browsing view"
-            aspect="9/16"
-            className="mx-auto mt-4"
-            style={{ maxWidth: '300px' }}
-            id="library"
-          />
+          <div className="mx-auto mt-4" style={{ maxWidth: '300px' }}>
+            <img
+              src="/screenshots/library-portrait.png"
+              alt="Tromme library browsing view"
+              className="w-full rounded-[18px] block"
+            />
+          </div>
         </SectionCard>
       </section>
 
@@ -191,14 +188,13 @@ export default function TrommeLanding() {
                 Optional cellular transcoding. Advanced queue management.
               </p>
             </div>
-            <ScreenshotSlot
-              label="PLAYBACK SCREENSHOT"
-              description="Queue, settings, or codec detail view"
-              aspect="9/16"
-              className="mx-auto mt-4"
-              style={{ maxWidth: '240px' }}
-              id="playback"
-            />
+            <div className="mx-auto mt-4" style={{ maxWidth: '240px' }}>
+              <img
+                src="/screenshots/playback-portrait.png"
+                alt="Tromme playback and queue view"
+                className="w-full rounded-[18px] block"
+              />
+            </div>
           </SectionCard>
 
           <SectionCard small>
@@ -215,59 +211,15 @@ export default function TrommeLanding() {
                 Infinite Mode keeps your queue flowing automatically.
               </p>
             </div>
-            <ScreenshotSlot
-              label="DISCOVER SCREENSHOT"
-              description="Magic Mix, Infinite Mode, or Favorites view"
-              aspect="9/16"
-              className="mx-auto mt-4"
-              style={{ maxWidth: '240px' }}
-              id="discover"
-            />
+            <div className="mx-auto mt-4" style={{ maxWidth: '240px' }}>
+              <img
+                src="/screenshots/discover-portrait.png"
+                alt="Tromme Magic Mix and discover view"
+                className="w-full rounded-[18px] block"
+              />
+            </div>
           </SectionCard>
         </div>
-      </section>
-
-      {/* CARPLAY — DARK SECTION */}
-      <section id="carplay" className="px-5 pb-6">
-        <SectionCard dark>
-          <div className="px-6 pt-16 pb-4 text-center">
-            <EyebrowLabel dark>CarPlay</EyebrowLabel>
-            <h2
-              className="tromme-display mx-auto mt-3"
-              style={{
-                fontSize: 'clamp(32px, 4.5vw, 56px)',
-                fontWeight: 600,
-                maxWidth: '720px',
-                color: '#f5f5f7',
-              }}
-            >
-              Made for the drive.
-            </h2>
-            <p
-              className="mx-auto mt-4"
-              style={{
-                fontSize: '19px',
-                maxWidth: '560px',
-                color: '#a1a1a6',
-                fontWeight: 400,
-                letterSpacing: '-0.003em',
-                lineHeight: 1.3,
-              }}
-            >
-              Home, Artists, Albums, and Playlists tabs. Alphabet-jump for large
-              libraries. Full CarPlay support, built in.
-            </p>
-          </div>
-          <ScreenshotSlot
-            label="CARPLAY SCREENSHOT"
-            description="CarPlay interface — landscape/widescreen"
-            aspect="16/10"
-            className="mx-auto mt-8 mb-4"
-            style={{ maxWidth: '720px' }}
-            dark
-            id="carplay"
-          />
-        </SectionCard>
       </section>
 
       {/* FEATURE LIST */}
@@ -331,7 +283,7 @@ export default function TrommeLanding() {
             </a>
           </div>
           <p className="text-[12px] mt-6" style={{ color: '#86868b' }}>
-            Requires iOS 26 or later. Plex Media Server required.
+            Requires iOS 16 or later. Plex Media Server required.
           </p>
         </div>
       </section>
@@ -405,68 +357,6 @@ function SectionCard({ children, dark, small }) {
     >
       {children}
     </div>
-  );
-}
-
-function ScreenshotSlot({ label, description, aspect = '9/16', className = '', style = {}, dark, id }) {
-  return (
-    <div className={className} style={style}>
-      <div
-        id={`screenshot-${id}`}
-        className="relative w-full rounded-[18px] overflow-hidden flex items-center justify-center"
-        style={{
-          aspectRatio: aspect,
-          background: dark
-            ? 'linear-gradient(135deg, #2a2a2c 0%, #1d1d1f 100%)'
-            : 'linear-gradient(135deg, #f5f5f7 0%, #e8e8ed 100%)',
-          border: dark ? '0.5px solid rgba(255,255,255,0.1)' : '0.5px solid rgba(0,0,0,0.06)',
-        }}
-      >
-        <div className="text-center px-4">
-          <div
-            className="inline-flex items-center justify-center w-10 h-10 rounded-full mx-auto mb-3"
-            style={{
-              background: dark ? 'rgba(255,255,255,0.08)' : 'rgba(0,0,0,0.05)',
-              color: dark ? '#a1a1a6' : '#86868b',
-            }}
-          >
-            <ImageIcon />
-          </div>
-          <div
-            className="text-[11px]"
-            style={{
-              fontWeight: 600,
-              letterSpacing: '0.08em',
-              color: dark ? '#a1a1a6' : '#86868b',
-              textTransform: 'uppercase',
-            }}
-          >
-            {label}
-          </div>
-          <div
-            className="text-[13px] mt-1.5 max-w-[220px] mx-auto"
-            style={{
-              color: dark ? '#a1a1a6' : '#86868b',
-              lineHeight: 1.4,
-              letterSpacing: '-0.003em',
-              opacity: 0.85,
-            }}
-          >
-            {description}
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function ImageIcon() {
-  return (
-    <svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-      <rect x="3" y="4" width="14" height="12" rx="2" />
-      <circle cx="7.5" cy="8" r="1.2" />
-      <path d="M17 13l-4-4-7 7" />
-    </svg>
   );
 }
 
