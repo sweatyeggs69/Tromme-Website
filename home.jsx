@@ -62,7 +62,7 @@ export default function TrommeLanding() {
             href="#download"
             className="text-[12px] px-3 py-1 rounded-full transition-all"
             style={{
-              background: '#0071e3',
+              background: '#ff6600',
               color: '#fff',
               fontWeight: 400,
             }}
@@ -110,7 +110,7 @@ export default function TrommeLanding() {
               href="#download"
               className="text-[17px] transition-opacity hover:opacity-85"
               style={{
-                color: '#0071e3',
+                color: '#ff6600',
                 fontWeight: 400,
                 letterSpacing: '-0.01em',
               }}
@@ -121,7 +121,7 @@ export default function TrommeLanding() {
               href="#features"
               className="text-[17px] transition-opacity hover:opacity-85"
               style={{
-                color: '#0071e3',
+                color: '#ff6600',
                 fontWeight: 400,
                 letterSpacing: '-0.01em',
               }}
@@ -282,26 +282,18 @@ export default function TrommeLanding() {
             <span style={{ color: '#86868b' }}>Nothing you wouldn't.</span>
           </h2>
 
-          <div className="grid md:grid-cols-2 gap-x-10 gap-y-8 mt-14 max-w-[780px] mx-auto">
+          <div className="grid md:grid-cols-2 gap-x-10 gap-y-10 mt-14 max-w-[780px] mx-auto">
             {features.map((f) => (
-              <div key={f.title} className="flex items-start gap-4">
-                <div
-                  className="flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center"
-                  style={{ background: '#0071e3', color: '#fff' }}
+              <div key={f.title}>
+                <h3 className="text-[17px]" style={{ fontWeight: 600, letterSpacing: '-0.01em' }}>
+                  {f.title}
+                </h3>
+                <p
+                  className="text-[15px] mt-1.5"
+                  style={{ color: '#86868b', lineHeight: 1.45, letterSpacing: '-0.003em' }}
                 >
-                  {f.icon}
-                </div>
-                <div>
-                  <h3 className="text-[17px]" style={{ fontWeight: 600, letterSpacing: '-0.01em' }}>
-                    {f.title}
-                  </h3>
-                  <p
-                    className="text-[15px] mt-1"
-                    style={{ color: '#86868b', lineHeight: 1.4, letterSpacing: '-0.003em' }}
-                  >
-                    {f.desc}
-                  </p>
-                </div>
+                  {f.desc}
+                </p>
               </div>
             ))}
           </div>
@@ -328,7 +320,7 @@ export default function TrommeLanding() {
               href="#"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-full transition-all hover:opacity-90"
               style={{
-                background: '#0071e3',
+                background: '#ff6600',
                 color: '#fff',
                 fontSize: '15px',
                 fontWeight: 400,
@@ -339,7 +331,7 @@ export default function TrommeLanding() {
             </a>
           </div>
           <p className="text-[12px] mt-6" style={{ color: '#86868b' }}>
-            Requires iOS 16 or later. Plex Media Server required.
+            Requires iOS 26 or later. Plex Media Server required.
           </p>
         </div>
       </section>
@@ -478,21 +470,13 @@ function ImageIcon() {
   );
 }
 
-function IconCheck() {
-  return (
-    <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M3 8l3.5 3.5L13 5" />
-    </svg>
-  );
-}
-
 const features = [
-  { title: 'No Plex Pass required', desc: 'Works with any standard Plex account. No subscription needed.', icon: <IconCheck /> },
-  { title: 'Lossless ALAC streaming', desc: 'FLAC files transcoded to lossless ALAC for bit-perfect iOS playback.', icon: <IconCheck /> },
-  { title: 'Magic Mix', desc: 'An infinite playlist generated from the style and genre of your current track.', icon: <IconCheck /> },
-  { title: 'Infinite Mode', desc: 'Keeps the music going by automatically extending your queue.', icon: <IconCheck /> },
-  { title: 'Full CarPlay support', desc: 'Home, Artists, Albums, and Playlists tabs with alphabet-jump navigation.', icon: <IconCheck /> },
-  { title: 'Detailed artist pages', desc: 'Top songs, albums, singles, and EPs — organized the way you think.', icon: <IconCheck /> },
-  { title: 'Codec & genre info', desc: 'See format, bit-depth, and genre details on every album.', icon: <IconCheck /> },
-  { title: 'Cellular-aware', desc: 'Optional cellular transcoding protects your data plan on the go.', icon: <IconCheck /> },
+  { title: 'No Plex Pass required', desc: 'Works with any standard Plex account. No subscription needed.' },
+  { title: 'Lossless ALAC streaming', desc: 'FLAC files transcoded to lossless ALAC for bit-perfect iOS playback.' },
+  { title: 'Magic Mix', desc: 'An infinite playlist generated from the style and genre of your current track.' },
+  { title: 'Infinite Mode', desc: 'Keeps the music going by automatically extending your queue.' },
+  { title: 'Full CarPlay support', desc: 'Home, Artists, Albums, and Playlists tabs with alphabet-jump navigation.' },
+  { title: 'Detailed artist pages', desc: 'Top songs, albums, singles, and EPs — organized the way you think.' },
+  { title: 'Codec & genre info', desc: 'See format, bit-depth, and genre details on every album.' },
+  { title: 'Cellular-aware', desc: 'Optional cellular transcoding protects your data plan on the go.' },
 ];
