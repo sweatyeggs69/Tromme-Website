@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 export default function TrommeLanding() {
   const [scrolled, setScrolled] = useState(false);
@@ -299,7 +300,7 @@ export default function TrommeLanding() {
             Plex and Plex Media Server are trademarks of Plex, Inc.
           </p>
           <div className="flex flex-wrap gap-5 mt-3 text-[12px]" style={{ color: '#424245' }}>
-            <a href="/privacy" className="hover:underline">Privacy Policy</a>
+            <Link to="/privacy" className="hover:underline">Privacy Policy</Link>
             <a href="#" className="hover:underline">Terms of Use</a>
             <a href="mailto:support@tromme.app" className="hover:underline">Support</a>
             <a href="mailto:support@tromme.app" className="hover:underline">Contact</a>
