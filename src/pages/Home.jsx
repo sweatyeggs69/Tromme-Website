@@ -92,7 +92,7 @@ export default function TrommeLanding() {
               color: '#86868b',
             }}
           >
-            Your Plex music, in native experience.
+            Your Plex music, in a native experience.
           </h2>
           <p
             className="tromme-subheading mx-auto mt-5"
