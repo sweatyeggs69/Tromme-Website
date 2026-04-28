@@ -59,7 +59,7 @@ export default function TrommeLanding() {
             <a href="#download" className="hover:opacity-60 transition-opacity">Download</a>
           </div>
           <a
-            href="#download"
+            href="https://apps.apple.com/us/app/tromme/id6762415193"
             className="text-[12px] px-3 py-1 rounded-full transition-all"
             style={{
               background: '#ff6600',
@@ -270,7 +270,7 @@ export default function TrommeLanding() {
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
             <a
-              href="#"
+              href="https://apps.apple.com/us/app/tromme/id6762415193"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-full transition-all hover:opacity-90"
               style={{
                 background: '#ff6600',
