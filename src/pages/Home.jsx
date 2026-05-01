@@ -130,13 +130,29 @@ export default function TrommeLanding() {
             </a>
           </div>
 
-          {/* Hero screenshot */}
-          <div className="mt-16 mx-auto" style={{ maxWidth: '360px' }}>
-            <img
-              src="/screenshots/hero-portrait.png"
-              alt="Tromme Now Playing screen"
-              className="w-full rounded-[18px] block"
-            />
+          {/* Hero screenshots */}
+          <div className="mt-16 mx-auto flex items-center justify-center gap-4 md:gap-6">
+            <div className="hidden md:block flex-shrink-0" style={{ width: '280px' }}>
+              <img
+                src="/screenshots/album-details.png"
+                alt="Tromme album details screen"
+                className="w-full rounded-[18px] block"
+              />
+            </div>
+            <div className="flex-shrink-0" style={{ width: '360px', maxWidth: '100%' }}>
+              <img
+                src="/screenshots/hero-portrait.png"
+                alt="Tromme Now Playing screen"
+                className="w-full rounded-[18px] block"
+              />
+            </div>
+            <div className="hidden md:block flex-shrink-0" style={{ width: '280px' }}>
+              <img
+                src="/screenshots/artist-details.png"
+                alt="Tromme artist details screen"
+                className="w-full rounded-[18px] block"
+              />
+            </div>
           </div>
         </div>
       </section>
