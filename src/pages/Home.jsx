@@ -14,9 +14,17 @@ export default function TrommeLanding() {
   useEffect(() => {
     const el = galleryRef.current;
     if (!el) return;
-    const middle = el.children[1];
-    if (!middle) return;
-    el.scrollLeft = middle.offsetLeft - (el.clientWidth - middle.clientWidth) / 2;
+    const center = () => {
+      const middle = el.children[1];
+      if (!middle) return;
+      const galleryRect = el.getBoundingClientRect();
+      const middleRect = middle.getBoundingClientRect();
+      const middleLeftInGallery = middleRect.left - galleryRect.left + el.scrollLeft;
+      el.scrollLeft = middleLeftInGallery - (el.clientWidth - middle.clientWidth) / 2;
+    };
+    center();
+    const id = requestAnimationFrame(center);
+    return () => cancelAnimationFrame(id);
   }, []);
 
   return (
@@ -143,7 +151,7 @@ export default function TrommeLanding() {
           {/* Hero screenshots: swipeable gallery on mobile, flanking layout on desktop */}
           <div
             ref={galleryRef}
-            className="tromme-gallery md:hidden mt-16 flex overflow-x-auto snap-x snap-mandatory gap-3 -mx-5"
+            className="tromme-gallery md:hidden relative mt-16 flex overflow-x-auto snap-x snap-mandatory gap-3 -mx-5"
             style={{
               scrollbarWidth: 'none',
               WebkitOverflowScrolling: 'touch',
