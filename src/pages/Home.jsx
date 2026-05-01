@@ -23,8 +23,15 @@ export default function TrommeLanding() {
       el.scrollLeft = middleLeftInGallery - (el.clientWidth - middle.clientWidth) / 2;
     };
     center();
-    const id = requestAnimationFrame(center);
-    return () => cancelAnimationFrame(id);
+    const raf = requestAnimationFrame(center);
+    const timeout = setTimeout(center, 120);
+    const onPageShow = () => center();
+    window.addEventListener('pageshow', onPageShow);
+    return () => {
+      cancelAnimationFrame(raf);
+      clearTimeout(timeout);
+      window.removeEventListener('pageshow', onPageShow);
+    };
   }, []);
 
   return (
@@ -257,7 +264,7 @@ export default function TrommeLanding() {
                 Optional cellular transcoding. Advanced queue management.
               </p>
             </div>
-            <div className="mx-auto mt-4" style={{ maxWidth: '240px' }}>
+            <div className="mx-auto mt-4 max-w-[300px] md:max-w-[240px]">
               <img
                 src="/screenshots/playback-portrait.png"
                 alt="Tromme playback and queue view"
@@ -280,7 +287,7 @@ export default function TrommeLanding() {
                 Infinite Mode keeps your queue flowing automatically.
               </p>
             </div>
-            <div className="mx-auto mt-4" style={{ maxWidth: '240px' }}>
+            <div className="mx-auto mt-4 max-w-[300px] md:max-w-[240px]">
               <img
                 src="/screenshots/discover-portrait.png"
                 alt="Tromme Magic Mix and discover view"
