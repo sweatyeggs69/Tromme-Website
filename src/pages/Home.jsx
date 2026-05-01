@@ -23,8 +23,15 @@ export default function TrommeLanding() {
       el.scrollLeft = middleLeftInGallery - (el.clientWidth - middle.clientWidth) / 2;
     };
     center();
-    const id = requestAnimationFrame(center);
-    return () => cancelAnimationFrame(id);
+    const raf = requestAnimationFrame(center);
+    const timeout = setTimeout(center, 120);
+    const onPageShow = () => center();
+    window.addEventListener('pageshow', onPageShow);
+    return () => {
+      cancelAnimationFrame(raf);
+      clearTimeout(timeout);
+      window.removeEventListener('pageshow', onPageShow);
+    };
   }, []);
 
   return (
