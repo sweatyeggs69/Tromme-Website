@@ -3,10 +3,7 @@ import { Link } from 'react-router-dom';
 
 export default function TrommeLanding() {
   const [scrolled, setScrolled] = useState(false);
-  const [galleryIndex, setGalleryIndex] = useState(1);
-  const [autoAdvance, setAutoAdvance] = useState(true);
   const galleryRef = useRef(null);
-  const didInitialScroll = useRef(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -17,22 +14,10 @@ export default function TrommeLanding() {
   useEffect(() => {
     const el = galleryRef.current;
     if (!el) return;
-    const item = el.children[galleryIndex];
-    if (!item) return;
-    const target = item.offsetLeft - (el.clientWidth - item.clientWidth) / 2;
-    el.scrollTo({ left: target, behavior: didInitialScroll.current ? 'smooth' : 'instant' });
-    didInitialScroll.current = true;
-  }, [galleryIndex]);
-
-  useEffect(() => {
-    if (!autoAdvance) return;
-    const id = setInterval(() => {
-      setGalleryIndex((i) => (i + 1) % 3);
-    }, 4000);
-    return () => clearInterval(id);
-  }, [autoAdvance]);
-
-  const pauseAutoAdvance = () => setAutoAdvance(false);
+    const middle = el.children[1];
+    if (!middle) return;
+    el.scrollLeft = middle.offsetLeft - (el.clientWidth - middle.clientWidth) / 2;
+  }, []);
 
   return (
     <div
@@ -158,9 +143,6 @@ export default function TrommeLanding() {
           {/* Hero screenshots: swipeable gallery on mobile, flanking layout on desktop */}
           <div
             ref={galleryRef}
-            onTouchStart={pauseAutoAdvance}
-            onPointerDown={pauseAutoAdvance}
-            onWheel={pauseAutoAdvance}
             className="tromme-gallery md:hidden mt-16 flex overflow-x-auto snap-x snap-mandatory gap-3 -mx-5"
             style={{
               scrollbarWidth: 'none',
