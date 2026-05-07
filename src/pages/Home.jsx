@@ -447,6 +447,5 @@ const features = [
   { title: 'Synced Lyrics', desc: 'Lyrics are automatically pulled from LRCLIB.'},
   { title: 'Bio, Codec & genre info', desc: 'See album information, format, bit-depth, and genre details on every album.' },
   { title: 'Cellular-aware', desc: 'Optional cellular transcoding for data-saving.' },
-  { title: 'Sound Check', desc: 'Keep audio levels consistent with automatic gain adjustments like ReplayGain.' },
-  { title: 'Gapless Playback', desc: 'Remove silence between track transistions.' },
+  { title: 'Sound Check', desc: 'Keep audio levels consistent with automatic gain adjustments like ReplayGain.' }
 ];
