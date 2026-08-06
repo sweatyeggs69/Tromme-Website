@@ -441,6 +441,7 @@ function SectionCard({ children, dark, small }) {
 const features = [
   { title: 'No Plex Pass required', desc: 'Works with any standard Plex account. No subscription needed.' },
   { title: 'Full CarPlay support', desc: 'Home, Artists, Albums, and Playlists tabs with alphabet-jump navigation.' },
+  { title: 'Offline Downloads and Playback', desc: 'Download your entire library or use Dynamic mode to save on space.' },
   { title: 'Lossless streaming', desc: 'FLAC files transcoded to lossless ALAC for bit-perfect iOS playback.' },
   { title: 'Magic Mix', desc: 'An infinite playlist generated from the style and genre of your current track.' },
   { title: 'Infinite Mode', desc: 'Keeps the music going by automatically extending your queue..' },
