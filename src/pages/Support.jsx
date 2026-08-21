@@ -186,32 +186,27 @@ export default function TrommeSupport() {
           <Section heading="Frequently asked questions">
             <div className="space-y-6">
               <FAQ question="Do I need Plex Pass?">
-                No. Tromme works with any standard Plex account — no subscription
-                required.
+                No. Tromme works with any standard Plex account.
               </FAQ>
               <FAQ question="Why can't Tromme see my server?">
                 Make sure your device and Plex Media Server can reach each other on the
                 network. If you're away from home, remote access must be enabled on the
-                server. Signing out and back in will refresh the server list.
+                server. Signing out and back into Tromme will refresh the server list.
               </FAQ>
               <FAQ question="Why does a song play at a lower quality on cellular?">
-                Cellular transcoding is optional and can be toggled in Settings. When
-                enabled, Tromme asks your Plex server to transcode audio over cellular
-                to protect your data plan. On Wi-Fi, playback defaults to lossless.
+                Check and make sure cellular transcoding is not toggled in Settings.
+                On Wi-Fi, playback defaults to lossless.
               </FAQ>
               <FAQ question="Does Tromme support FLAC?">
-                Yes. FLAC files on your server are transcoded to lossless ALAC for
-                bit-perfect playback on iOS. The original files on your server are not
-                modified.
+                Yes, but with somne limitations. FLAC files on your server are transcoded
+                to lossless ALAC for playback on iOS and iPadOS.
               </FAQ>
-              <FAQ question="Does CarPlay work?">
-                Yes. Tromme ships full CarPlay support with Home, Artists, Albums, and
-                Playlists tabs, plus alphabet-jump navigation for large libraries.
+              <FAQ question="Is CarPlay supported?">
+                Yes. Tromme ships full CarPlay support.
               </FAQ>
               <FAQ question="What is Magic Mix?">
                 Magic Mix generates an infinite playlist based on the style and genre
-                of the track you're playing. Enable Infinite Mode in the queue and
-                Tromme will keep adding new tracks automatically.
+                of the track you're playing.
               </FAQ>
               <FAQ question="Is my data private?">
                 Yes. Tromme does not collect, store, or transmit any personal data.
@@ -234,12 +229,11 @@ export default function TrommeSupport() {
                 Tromme after the scan completes.
               </p>
               <p>
-                <strong>Can't sign in.</strong> Check that you can sign in at{' '}
-                <a href="https://app.plex.tv" target="_blank" rel="noopener noreferrer">
-                  app.plex.tv
-                </a>{' '}
-                in a browser. If that works but Tromme doesn't, sign out of Tromme and
-                try again.
+                <strong>Magic Mix doesn't work.</strong> If you tap the Magic Mix button
+                and a queue doesn't populate, the song or album likely doesn't have any
+                tags or styles applied. You can check this by editing the song or album
+                in Plex. You may also want to check and make sure the album is matched
+                correctly.
               </p>
               <p>
                 <strong>Still stuck?</strong> Email{' '}
