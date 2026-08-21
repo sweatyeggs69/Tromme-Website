@@ -169,7 +169,7 @@ export default function TrommeSupport() {
               </p>
               <p>
                 <strong>2. Sign in to Plex.</strong> Tap <em>Sign in</em> and authenticate
-                directly with Plex. Tromme uses Plex's own sign-in flow — your password
+                directly with Plex. Tromme uses Plex's own sign-in flow, so your password
                 is never seen by the app.
               </p>
               <p>
@@ -178,7 +178,7 @@ export default function TrommeSupport() {
               </p>
               <p>
                 <strong>4. Start listening.</strong> Browse by artist, album, song, or
-                playlist — or pull up a Magic Mix from anything that's playing.
+                playlist, or start a Magic Mix from anything that's playing.
               </p>
             </div>
           </Section>
@@ -258,8 +258,7 @@ export default function TrommeSupport() {
             <div className="tromme-body">
               <p>
                 Tromme requires iOS or iPadOS 26 or later and a Plex Media Server that
-                you can sign in to. Any standard Plex account works — a Plex Pass
-                subscription is not required.
+                you can sign in to.
               </p>
             </div>
           </Section>
