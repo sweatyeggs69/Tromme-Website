@@ -229,11 +229,11 @@ export default function TrommeSupport() {
                 Tromme after the scan completes.
               </p>
               <p>
-                <strong>Magic Mix doesn't work.</strong> If you tap the Magic Mix button
-                and a queue doesn't populate, the song or album likely doesn't have any
-                tags or styles applied. You can check this by editing the song or album
-                in Plex. You may also want to check and make sure the album is matched
-                correctly.
+                <strong>The Magic Mix button is grayed out.</strong> Magic Mix references the
+                Similar Artists defined in the Artist page. This data is usually provided by
+                Plex's music metadata agent, If the playing track's artist does not have any
+                similar artists listed, Magic Mix will be disabled. The more music you have in
+                your library, the better.
               </p>
               <p>
                 <strong>Still stuck?</strong> Email{' '}
