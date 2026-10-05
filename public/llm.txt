@@ -1,0 +1,33 @@
+# Tromme
+
+> Tromme is a dedicated music player app for Plex Media Server on iPhone and iPad. It offers lossless streaming, Magic Mix, offline downloads and full CarPlay support, and it works with any standard Plex account with no Plex Pass required.
+
+Tromme requires iOS or iPadOS 26 or later and a Plex Media Server. It is not affiliated with Plex, Inc. Tromme does not collect, store, or transmit any personal data; the Plex token is stored in the iOS Keychain on the device.
+
+## Features
+
+- No Plex Pass required: Works with any standard Plex account
+- Full CarPlay support: Home, Artists, Albums and Playlists tabs with alphabet-jump navigation
+- Offline downloads and playback: Download the entire library or use Dynamic mode to save space
+- Lossless streaming: FLAC files are transcoded to lossless ALAC for bit-perfect iOS playback
+- Magic Mix: An infinite playlist generated from the style and genre of the current track
+- Infinite Mode: Automatically extends the queue so the music keeps going
+- Synced lyrics: Pulled automatically from LRCLIB
+- Bio, codec and genre info: Album information, format, bit depth and genre on every album
+- Cellular-aware: Optional cellular transcoding to save data
+- Sound Check: Consistent audio levels with automatic gain adjustment, like ReplayGain
+
+## Pages
+
+- [Home](https://tromme.app/): Overview, features and download link
+- [Support](https://tromme.app/support): FAQ and troubleshooting
+- [Download on the App Store](https://apps.apple.com/us/app/tromme/id6762415193)
+
+## Contact
+
+- Email: support@tromme.app
+
+## Optional
+
+- [Privacy Policy](https://tromme.app/privacy)
+- [Terms of Use](https://tromme.app/terms)
