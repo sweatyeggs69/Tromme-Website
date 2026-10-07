@@ -152,7 +152,8 @@ export default function TrommeLanding() {
                   letterSpacing: '-0.01em',
                 }}
               >
-                Learn more ›
+                Learn more<span className="sr-only"> about Tromme features</span>{' '}
+                <span aria-hidden="true">›</span>
               </a>
             </div>
 
