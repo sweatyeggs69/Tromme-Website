@@ -1,24 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Home from './pages/Home.jsx';
-import Privacy from './pages/Privacy.jsx';
-import Terms from './pages/Terms.jsx';
-import Support from './pages/Support.jsx';
+import { BrowserRouter } from 'react-router-dom';
+import AppRoutes from './AppRoutes.jsx';
 import './index.css';
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+const app = (
   <React.StrictMode>
     <BrowserRouter>
-      <a className="skip-link" href="#main">
-        Skip to main content
-      </a>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/privacy" element={<Privacy />} />
-        <Route path="/terms" element={<Terms />} />
-        <Route path="/support" element={<Support />} />
-      </Routes>
+      <AppRoutes />
     </BrowserRouter>
-  </React.StrictMode>,
+  </React.StrictMode>
 );
+
+const root = document.getElementById('root');
+
+// Pages are prerendered at build time (scripts/prerender.js), so hydrate the
+// existing markup when it is there and fall back to a fresh render otherwise.
+if (root.hasChildNodes()) {
+  ReactDOM.hydrateRoot(root, app);
+} else {
+  ReactDOM.createRoot(root).render(app);
+}
