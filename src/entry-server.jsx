@@ -4,6 +4,7 @@ import { StaticRouter } from 'react-router-dom/server';
 import AppRoutes from './AppRoutes.jsx';
 
 export const routes = ['/', '/privacy', '/terms', '/support'];
+export { headTags } from './seo.js';
 
 export function render(url) {
   return renderToString(
