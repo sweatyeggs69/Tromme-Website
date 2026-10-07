@@ -269,7 +269,7 @@ export default function TrommeLanding() {
               <div className="mx-auto mt-4 max-w-[300px] md:max-w-[240px]">
                 <img
                   src="/screenshots/playback-portrait.png"
-                  alt="Tromme playback and queue view"
+                  alt="Tromme now playing screen with word-synced lyrics"
                   className="w-full rounded-[18px] block"
                 />
               </div>
@@ -292,7 +292,7 @@ export default function TrommeLanding() {
               <div className="mx-auto mt-4 max-w-[300px] md:max-w-[240px]">
                 <img
                   src="/screenshots/discover-portrait.png"
-                  alt="Tromme Magic Mix and discover view"
+                  alt="Tromme Playing Next queue with shuffle, repeat, and Magic Mix controls"
                   className="w-full rounded-[18px] block"
                 />
               </div>
