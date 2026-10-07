@@ -445,7 +445,7 @@ const features = [
   { title: 'Lossless streaming', desc: 'FLAC files transcoded to lossless ALAC for bit-perfect iOS playback.' },
   { title: 'Magic Mix', desc: 'An infinite playlist generated from the style and genre of your current track.' },
   { title: 'Infinite Mode', desc: 'Keeps the music going by automatically extending your queue..' },
-  { title: 'Synced Lyrics', desc: 'Lyrics are automatically pulled from LRCLIB.'},
+  { title: 'Word-Synced Lyrics', desc: 'Lyrics highlight word by word as the song plays, pulled automatically from LRCLIB.' },
   { title: 'Bio, Codec & genre info', desc: 'See album information, format, bit-depth, and genre details on every album.' },
   { title: 'Cellular-aware', desc: 'Optional cellular transcoding for data-saving.' },
   { title: 'Sound Check', desc: 'Keep audio levels consistent with automatic gain adjustments like ReplayGain.' }

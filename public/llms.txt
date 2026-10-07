@@ -12,7 +12,7 @@ Tromme requires iOS or iPadOS 26 or later and a Plex Media Server. It is not aff
 - Lossless streaming: FLAC files are transcoded to lossless ALAC for bit-perfect iOS playback
 - Magic Mix: An infinite playlist generated from the style and genre of the current track
 - Infinite Mode: Automatically extends the queue so the music keeps going
-- Synced lyrics: Pulled automatically from LRCLIB
+- Word-synced lyrics: Lyrics highlight word by word as the song plays, pulled automatically from LRCLIB
 - Bio, codec and genre info: Album information, format, bit depth and genre on every album
 - Cellular-aware: Optional cellular transcoding to save data
 - Sound Check: Consistent audio levels with automatic gain adjustment, like ReplayGain
