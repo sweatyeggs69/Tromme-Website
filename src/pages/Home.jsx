@@ -97,272 +97,274 @@ export default function TrommeLanding() {
         </div>
       </nav>
 
-      {/* HERO */}
-      <section id="overview" className="pt-28 pb-20 px-5">
-        <div className="max-w-[980px] mx-auto text-center">
-          <h1
-            className="tromme-display mx-auto"
-            style={{
-              fontSize: 'clamp(40px, 7vw, 80px)',
-              fontWeight: 600,
-            }}
-          >
-            Tromme
-          </h1>
-          <h2
-            className="tromme-display mx-auto mt-2"
-            style={{
-              fontSize: 'clamp(28px, 4.5vw, 56px)',
-              fontWeight: 600,
-              color: '#86868b',
-            }}
-          >
-            Your Plex music, in a native experience.
-          </h2>
-          <p
-            className="tromme-subheading mx-auto mt-5"
-            style={{
-              fontSize: 'clamp(19px, 2vw, 24px)',
-              maxWidth: '640px',
-            }}
-          >
-            A dedicated music player for Plex Media Server.
-            Lossless streaming, Magic Mix, CarPlay and the best part... no Plex Pass required.
-          </p>
-
-          <div className="flex flex-wrap items-center justify-center gap-4 mt-8">
-            <a
-              href="#download"
-              className="text-[17px] transition-opacity hover:opacity-85"
+      <main id="main" tabIndex={-1} className="outline-none">
+        {/* HERO */}
+        <section id="overview" className="pt-28 pb-20 px-5">
+          <div className="max-w-[980px] mx-auto text-center">
+            <h1
+              className="tromme-display mx-auto"
               style={{
-                color: '#ff6600',
-                fontWeight: 400,
-                letterSpacing: '-0.01em',
+                fontSize: 'clamp(40px, 7vw, 80px)',
+                fontWeight: 600,
               }}
             >
-              Download on the App Store ›
-            </a>
-            <a
-              href="#features"
-              className="text-[17px] transition-opacity hover:opacity-85"
-              style={{
-                color: '#ff6600',
-                fontWeight: 400,
-                letterSpacing: '-0.01em',
-              }}
-            >
-              Learn more ›
-            </a>
-          </div>
-
-          {/* Hero screenshots: swipeable gallery on mobile, flanking layout on desktop */}
-          <div
-            ref={galleryRef}
-            className="tromme-gallery md:hidden relative mt-16 flex overflow-x-auto snap-x snap-mandatory gap-3 -mx-5"
-            style={{
-              scrollbarWidth: 'none',
-              WebkitOverflowScrolling: 'touch',
-              scrollPaddingInline: 'calc(50% - 130px)',
-              paddingLeft: 'calc(50% - 160px)',
-              paddingRight: 'calc(50% - 160px)',
-            }}
-          >
-            <div className="snap-center flex-shrink-0" style={{ width: '260px' }}>
-              <img
-                src="/screenshots/album-details.png"
-                alt="Tromme album details screen"
-                className="w-full rounded-[18px] block"
-              />
-            </div>
-            <div className="snap-center flex-shrink-0" style={{ width: '260px' }}>
-              <img
-                src="/screenshots/hero-portrait.png"
-                alt="Tromme Now Playing screen"
-                className="w-full rounded-[18px] block"
-              />
-            </div>
-            <div className="snap-center flex-shrink-0" style={{ width: '260px' }}>
-              <img
-                src="/screenshots/artist-details.png"
-                alt="Tromme artist details screen"
-                className="w-full rounded-[18px] block"
-              />
-            </div>
-          </div>
-
-          <div className="hidden md:flex mt-16 mx-auto items-center justify-center gap-6">
-            <div className="flex-shrink-0" style={{ width: '280px' }}>
-              <img
-                src="/screenshots/album-details.png"
-                alt="Tromme album details screen"
-                className="w-full rounded-[18px] block"
-              />
-            </div>
-            <div className="flex-shrink-0" style={{ width: '360px' }}>
-              <img
-                src="/screenshots/hero-portrait.png"
-                alt="Tromme Now Playing screen"
-                className="w-full rounded-[18px] block"
-              />
-            </div>
-            <div className="flex-shrink-0" style={{ width: '280px' }}>
-              <img
-                src="/screenshots/artist-details.png"
-                alt="Tromme artist details screen"
-                className="w-full rounded-[18px] block"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* LIBRARY  FULL WIDTH LIGHT CARD */}
-      <section id="features" className="px-5 pb-6">
-        <SectionCard>
-          <div className="px-6 pt-16 pb-4 md:pt-20 text-center">
-            <EyebrowLabel>Your library</EyebrowLabel>
+              Tromme
+            </h1>
             <h2
-              className="tromme-display mx-auto mt-3"
-              style={{ fontSize: 'clamp(32px, 4.5vw, 56px)', fontWeight: 600, maxWidth: '720px' }}
+              className="tromme-display mx-auto mt-2"
+              style={{
+                fontSize: 'clamp(28px, 4.5vw, 56px)',
+                fontWeight: 600,
+                color: '#86868b',
+              }}
             >
-              Browse everything.
+              Your Plex music, in a native experience.
+            </h2>
+            <p
+              className="tromme-subheading mx-auto mt-5"
+              style={{
+                fontSize: 'clamp(19px, 2vw, 24px)',
+                maxWidth: '640px',
+              }}
+            >
+              A dedicated music player for Plex Media Server.
+              Lossless streaming, Magic Mix, CarPlay and the best part... no Plex Pass required.
+            </p>
+
+            <div className="flex flex-wrap items-center justify-center gap-4 mt-8">
+              <a
+                href="#download"
+                className="text-[17px] transition-opacity hover:opacity-85"
+                style={{
+                  color: '#ff6600',
+                  fontWeight: 400,
+                  letterSpacing: '-0.01em',
+                }}
+              >
+                Download on the App Store ›
+              </a>
+              <a
+                href="#features"
+                className="text-[17px] transition-opacity hover:opacity-85"
+                style={{
+                  color: '#ff6600',
+                  fontWeight: 400,
+                  letterSpacing: '-0.01em',
+                }}
+              >
+                Learn more ›
+              </a>
+            </div>
+
+            {/* Hero screenshots: swipeable gallery on mobile, flanking layout on desktop */}
+            <div
+              ref={galleryRef}
+              className="tromme-gallery md:hidden relative mt-16 flex overflow-x-auto snap-x snap-mandatory gap-3 -mx-5"
+              style={{
+                scrollbarWidth: 'none',
+                WebkitOverflowScrolling: 'touch',
+                scrollPaddingInline: 'calc(50% - 130px)',
+                paddingLeft: 'calc(50% - 160px)',
+                paddingRight: 'calc(50% - 160px)',
+              }}
+            >
+              <div className="snap-center flex-shrink-0" style={{ width: '260px' }}>
+                <img
+                  src="/screenshots/album-details.png"
+                  alt="Tromme album details screen"
+                  className="w-full rounded-[18px] block"
+                />
+              </div>
+              <div className="snap-center flex-shrink-0" style={{ width: '260px' }}>
+                <img
+                  src="/screenshots/hero-portrait.png"
+                  alt="Tromme Now Playing screen"
+                  className="w-full rounded-[18px] block"
+                />
+              </div>
+              <div className="snap-center flex-shrink-0" style={{ width: '260px' }}>
+                <img
+                  src="/screenshots/artist-details.png"
+                  alt="Tromme artist details screen"
+                  className="w-full rounded-[18px] block"
+                />
+              </div>
+            </div>
+
+            <div className="hidden md:flex mt-16 mx-auto items-center justify-center gap-6">
+              <div className="flex-shrink-0" style={{ width: '280px' }}>
+                <img
+                  src="/screenshots/album-details.png"
+                  alt="Tromme album details screen"
+                  className="w-full rounded-[18px] block"
+                />
+              </div>
+              <div className="flex-shrink-0" style={{ width: '360px' }}>
+                <img
+                  src="/screenshots/hero-portrait.png"
+                  alt="Tromme Now Playing screen"
+                  className="w-full rounded-[18px] block"
+                />
+              </div>
+              <div className="flex-shrink-0" style={{ width: '280px' }}>
+                <img
+                  src="/screenshots/artist-details.png"
+                  alt="Tromme artist details screen"
+                  className="w-full rounded-[18px] block"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* LIBRARY  FULL WIDTH LIGHT CARD */}
+        <section id="features" className="px-5 pb-6">
+          <SectionCard>
+            <div className="px-6 pt-16 pb-4 md:pt-20 text-center">
+              <EyebrowLabel>Your library</EyebrowLabel>
+              <h2
+                className="tromme-display mx-auto mt-3"
+                style={{ fontSize: 'clamp(32px, 4.5vw, 56px)', fontWeight: 600, maxWidth: '720px' }}
+              >
+                Browse everything.
+                <br />
+                <span style={{ color: '#86868b' }}>Find anything.</span>
+              </h2>
+              <p
+                className="tromme-subheading mx-auto mt-4"
+                style={{ fontSize: '19px', maxWidth: '560px' }}
+              >
+                Artists, albums, songs, and playlists organized the way you expect.
+                Search across your entire collection instantly.
+              </p>
+            </div>
+            <div className="mx-auto mt-4" style={{ maxWidth: '300px' }}>
+              <img
+                src="/screenshots/library-portrait.png"
+                alt="Tromme library browsing view"
+                className="w-full rounded-[18px] block"
+              />
+            </div>
+          </SectionCard>
+        </section>
+
+        {/* TWO UP  PLAYBACK + DISCOVER */}
+        <section className="px-5 pb-6">
+          <div className="max-w-[980px] mx-auto grid md:grid-cols-2 gap-6">
+            <SectionCard small>
+              <div className="px-6 pt-12 pb-4 text-center">
+                <EyebrowLabel>Playback</EyebrowLabel>
+                <h3
+                  className="tromme-display mt-2"
+                  style={{ fontSize: 'clamp(26px, 3vw, 36px)', fontWeight: 600 }}
+                >
+                  Lossless, by default.
+                </h3>
+                <p className="tromme-subheading mt-3" style={{ fontSize: '17px' }}>
+                  High-fidelity streaming with ALAC transcoding for your FLAC files.
+                  Optional cellular transcoding. Advanced queue management.
+                </p>
+              </div>
+              <div className="mx-auto mt-4 max-w-[300px] md:max-w-[240px]">
+                <img
+                  src="/screenshots/playback-portrait.png"
+                  alt="Tromme playback and queue view"
+                  className="w-full rounded-[18px] block"
+                />
+              </div>
+            </SectionCard>
+
+            <SectionCard small>
+              <div className="px-6 pt-12 pb-4 text-center">
+                <EyebrowLabel>Discover</EyebrowLabel>
+                <h3
+                  className="tromme-display mt-2"
+                  style={{ fontSize: 'clamp(26px, 3vw, 36px)', fontWeight: 600 }}
+                >
+                  The music keeps going.
+                </h3>
+                <p className="tromme-subheading mt-3" style={{ fontSize: '17px' }}>
+                  Magic Mix generates an infinite playlist from what you're playing.
+                  Infinite Mode keeps your queue flowing automatically.
+                </p>
+              </div>
+              <div className="mx-auto mt-4 max-w-[300px] md:max-w-[240px]">
+                <img
+                  src="/screenshots/discover-portrait.png"
+                  alt="Tromme Magic Mix and discover view"
+                  className="w-full rounded-[18px] block"
+                />
+              </div>
+            </SectionCard>
+          </div>
+        </section>
+
+        {/* FEATURE LIST */}
+        <section className="px-5 py-20">
+          <div className="max-w-[980px] mx-auto">
+            <h2
+              className="tromme-display text-center mx-auto"
+              style={{ fontSize: 'clamp(28px, 3.5vw, 40px)', fontWeight: 600, maxWidth: '720px' }}
+            >
+              Everything you'd want.
               <br />
-              <span style={{ color: '#86868b' }}>Find anything.</span>
+              <span style={{ color: '#86868b' }}>Apple-like experience.</span>
+            </h2>
+
+            <div className="grid md:grid-cols-2 gap-x-10 gap-y-10 mt-14 max-w-[780px] mx-auto">
+              {features.map((f) => (
+                <div key={f.title}>
+                  <h3 className="text-[17px]" style={{ fontWeight: 600, letterSpacing: '-0.01em' }}>
+                    {f.title}
+                  </h3>
+                  <p
+                    className="text-[15px] mt-1.5"
+                    style={{ color: '#86868b', lineHeight: 1.45, letterSpacing: '-0.003em' }}
+                  >
+                    {f.desc}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* FINAL CTA */}
+        <section id="download" className="px-5 py-20 text-center">
+          <div className="max-w-[680px] mx-auto">
+            <h2
+              className="tromme-display mx-auto"
+              style={{ fontSize: 'clamp(36px, 5vw, 56px)', fontWeight: 600 }}
+            >
+              Get Tromme.
             </h2>
             <p
               className="tromme-subheading mx-auto mt-4"
-              style={{ fontSize: '19px', maxWidth: '560px' }}
+              style={{ fontSize: '19px' }}
             >
-              Artists, albums, songs, and playlists organized the way you expect.
-              Search across your entire collection instantly.
+              Point it at your Plex server and you're listening in seconds.
+            </p>
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+              <a
+                href="https://apps.apple.com/us/app/tromme/id6762415193"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-full transition-all hover:opacity-90"
+                style={{
+                  background: '#ff6600',
+                  color: '#fff',
+                  fontSize: '15px',
+                  fontWeight: 400,
+                }}
+              >
+                <AppleIcon />
+                Download on the App Store
+              </a>
+            </div>
+            <p className="text-[12px] mt-6" style={{ color: '#86868b' }}>
+              Requires iOS/iPadOS 26 or later. A Plex Media Server is required.
             </p>
           </div>
-          <div className="mx-auto mt-4" style={{ maxWidth: '300px' }}>
-            <img
-              src="/screenshots/library-portrait.png"
-              alt="Tromme library browsing view"
-              className="w-full rounded-[18px] block"
-            />
-          </div>
-        </SectionCard>
-      </section>
-
-      {/* TWO UP  PLAYBACK + DISCOVER */}
-      <section className="px-5 pb-6">
-        <div className="max-w-[980px] mx-auto grid md:grid-cols-2 gap-6">
-          <SectionCard small>
-            <div className="px-6 pt-12 pb-4 text-center">
-              <EyebrowLabel>Playback</EyebrowLabel>
-              <h3
-                className="tromme-display mt-2"
-                style={{ fontSize: 'clamp(26px, 3vw, 36px)', fontWeight: 600 }}
-              >
-                Lossless, by default.
-              </h3>
-              <p className="tromme-subheading mt-3" style={{ fontSize: '17px' }}>
-                High-fidelity streaming with ALAC transcoding for your FLAC files.
-                Optional cellular transcoding. Advanced queue management.
-              </p>
-            </div>
-            <div className="mx-auto mt-4 max-w-[300px] md:max-w-[240px]">
-              <img
-                src="/screenshots/playback-portrait.png"
-                alt="Tromme playback and queue view"
-                className="w-full rounded-[18px] block"
-              />
-            </div>
-          </SectionCard>
-
-          <SectionCard small>
-            <div className="px-6 pt-12 pb-4 text-center">
-              <EyebrowLabel>Discover</EyebrowLabel>
-              <h3
-                className="tromme-display mt-2"
-                style={{ fontSize: 'clamp(26px, 3vw, 36px)', fontWeight: 600 }}
-              >
-                The music keeps going.
-              </h3>
-              <p className="tromme-subheading mt-3" style={{ fontSize: '17px' }}>
-                Magic Mix generates an infinite playlist from what you're playing.
-                Infinite Mode keeps your queue flowing automatically.
-              </p>
-            </div>
-            <div className="mx-auto mt-4 max-w-[300px] md:max-w-[240px]">
-              <img
-                src="/screenshots/discover-portrait.png"
-                alt="Tromme Magic Mix and discover view"
-                className="w-full rounded-[18px] block"
-              />
-            </div>
-          </SectionCard>
-        </div>
-      </section>
-
-      {/* FEATURE LIST */}
-      <section className="px-5 py-20">
-        <div className="max-w-[980px] mx-auto">
-          <h2
-            className="tromme-display text-center mx-auto"
-            style={{ fontSize: 'clamp(28px, 3.5vw, 40px)', fontWeight: 600, maxWidth: '720px' }}
-          >
-            Everything you'd want.
-            <br />
-            <span style={{ color: '#86868b' }}>Apple-like experience.</span>
-          </h2>
-
-          <div className="grid md:grid-cols-2 gap-x-10 gap-y-10 mt-14 max-w-[780px] mx-auto">
-            {features.map((f) => (
-              <div key={f.title}>
-                <h3 className="text-[17px]" style={{ fontWeight: 600, letterSpacing: '-0.01em' }}>
-                  {f.title}
-                </h3>
-                <p
-                  className="text-[15px] mt-1.5"
-                  style={{ color: '#86868b', lineHeight: 1.45, letterSpacing: '-0.003em' }}
-                >
-                  {f.desc}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* FINAL CTA */}
-      <section id="download" className="px-5 py-20 text-center">
-        <div className="max-w-[680px] mx-auto">
-          <h2
-            className="tromme-display mx-auto"
-            style={{ fontSize: 'clamp(36px, 5vw, 56px)', fontWeight: 600 }}
-          >
-            Get Tromme.
-          </h2>
-          <p
-            className="tromme-subheading mx-auto mt-4"
-            style={{ fontSize: '19px' }}
-          >
-            Point it at your Plex server and you're listening in seconds.
-          </p>
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-            <a
-              href="https://apps.apple.com/us/app/tromme/id6762415193"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full transition-all hover:opacity-90"
-              style={{
-                background: '#ff6600',
-                color: '#fff',
-                fontSize: '15px',
-                fontWeight: 400,
-              }}
-            >
-              <AppleIcon />
-              Download on the App Store
-            </a>
-          </div>
-          <p className="text-[12px] mt-6" style={{ color: '#86868b' }}>
-            Requires iOS/iPadOS 26 or later. A Plex Media Server is required.
-          </p>
-        </div>
-      </section>
+        </section>
+      </main>
 
       {/* Footer */}
       <footer
