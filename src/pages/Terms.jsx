@@ -209,8 +209,8 @@ export default function TrommeTerms() {
                   Tromme is distributed through the Apple App Store and is subject to
                   Apple's terms in addition to these. Your use of Plex Media Server is
                   governed by Plex's own terms, which you can review at{' '}
-                  <a href="https://www.plex.tv/about/privacy-legal/terms-of-service/" target="_blank" rel="noopener noreferrer">
-                    plex.tv/about/privacy-legal/terms-of-service
+                  <a href="https://www.plex.tv/about/privacy-legal/plex-terms-of-service/" target="_blank" rel="noopener noreferrer">
+                    plex.tv/about/privacy-legal/plex-terms-of-service
                   </a>.
                 </p>
               </div>

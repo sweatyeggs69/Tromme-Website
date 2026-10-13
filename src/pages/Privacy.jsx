@@ -235,8 +235,8 @@ export default function TrommePrivacy() {
                   <strong>Plex Media Server.</strong> Tromme connects to Plex on your behalf.
                   Your use of Plex is governed by Plex's own privacy policy, which you can
                   review at{' '}
-                  <a href="https://www.plex.tv/about/privacy-legal/privacy-policy/" target="_blank" rel="noopener noreferrer">
-                    plex.tv/about/privacy-legal/privacy-policy
+                  <a href="https://www.plex.tv/about/privacy-legal/" target="_blank" rel="noopener noreferrer">
+                    plex.tv/about/privacy-legal
                   </a>.
                 </p>
                 <p>
