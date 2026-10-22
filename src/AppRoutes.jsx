@@ -18,6 +18,18 @@ function DocumentTitle() {
   return null;
 }
 
+// Client-side navigation keeps the old scroll position, so reset it on each
+// route change (or jump to the #anchor when the link has one).
+function ScrollToTop() {
+  const { pathname, hash } = useLocation();
+  useEffect(() => {
+    const target = hash && document.getElementById(hash.slice(1));
+    if (target) target.scrollIntoView();
+    else window.scrollTo(0, 0);
+  }, [pathname, hash]);
+  return null;
+}
+
 export default function AppRoutes() {
   return (
     <>
@@ -25,6 +37,7 @@ export default function AppRoutes() {
         Skip to main content
       </a>
       <DocumentTitle />
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/privacy" element={<Privacy />} />
