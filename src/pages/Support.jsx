@@ -59,7 +59,7 @@ export default function TrommeSupport() {
               <div className="tromme-body">
                 <p>
                   <strong>1. Install Tromme</strong> from the App Store on your iPhone or iPad
-                  running iOS/iPadOS 26 or later.
+                  running iOS/iPadOS 27 or later.
                 </p>
                 <p>
                   <strong>2. Sign in to Plex.</strong> Tap <em>Sign in</em> and authenticate
@@ -151,7 +151,7 @@ export default function TrommeSupport() {
             <Section heading="System requirements">
               <div className="tromme-body">
                 <p>
-                  Tromme requires iOS or iPadOS 26 or later and a Plex Media Server that
+                  Tromme requires iOS or iPadOS 27 or later and a Plex Media Server that
                   you can sign in to.
                 </p>
               </div>

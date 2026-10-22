@@ -2,7 +2,7 @@
 
 > Tromme is a dedicated music player app for Plex Media Server on iPhone and iPad. It offers lossless streaming, Magic Mix, offline downloads and full CarPlay support, and it works with any standard Plex account with no Plex Pass required.
 
-Tromme requires iOS or iPadOS 26 or later and a Plex Media Server. It is not affiliated with Plex, Inc. Tromme does not collect, store, or transmit any personal data; the Plex token is stored in the iOS Keychain on the device.
+Tromme requires iOS or iPadOS 27 or later and a Plex Media Server. It is not affiliated with Plex, Inc. Tromme does not collect, store, or transmit any personal data; the Plex token is stored in the iOS Keychain on the device.
 
 ## Features
 

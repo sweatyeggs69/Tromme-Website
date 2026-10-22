@@ -67,7 +67,7 @@ function structuredData(path, page) {
       name: SITE_NAME,
       url: `${SITE_URL}/`,
       description: page.description,
-      operatingSystem: 'iOS 26, iPadOS 26',
+      operatingSystem: 'iOS 27, iPadOS 27',
       applicationCategory: 'MusicApplication',
       image: IMAGE,
       downloadUrl: 'https://apps.apple.com/us/app/tromme/id6762415193',
