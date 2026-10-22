@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import Layout, { APP_STORE_URL } from '../components/Layout.jsx';
 
 const features = [
@@ -12,6 +12,12 @@ const features = [
   { title: 'Album details', desc: 'See album information, format, bit-depth, and genre details on every album.' },
   { title: 'Cellular-aware', desc: 'Optional cellular transcoding for data-saving.' },
   { title: 'Sound Check', desc: 'Keep audio levels consistent with automatic gain adjustments like ReplayGain.' },
+];
+
+const heroShots = [
+  { src: '/screenshots/album-details.png', alt: 'Tromme album details screen' },
+  { src: '/screenshots/hero-portrait.png', alt: 'Tromme Now Playing screen' },
+  { src: '/screenshots/artist-details.png', alt: 'Tromme artist details screen' },
 ];
 
 const showcase = [
@@ -39,6 +45,15 @@ const showcase = [
 ];
 
 export default function TrommeLanding() {
+  const shotsRef = useRef(null);
+
+  // Start the phone carousel on the middle screenshot.
+  useEffect(() => {
+    const el = shotsRef.current;
+    const middle = el && el.children[1];
+    if (middle) el.scrollLeft = middle.offsetLeft - (el.clientWidth - middle.clientWidth) / 2;
+  }, []);
+
   return (
     <Layout>
       {/* Hero */}
@@ -60,10 +75,15 @@ export default function TrommeLanding() {
             <a href="#features" className="btn btn-ghost">Explore features</a>
           </div>
         </div>
-        <div className="max-w-[1080px] mx-auto mt-14 flex items-end justify-center gap-4 md:gap-8">
-          <img src="/screenshots/album-details.png" alt="Tromme album details screen" className="hidden sm:block w-[26%] max-w-[280px] block" />
-          <img src="/screenshots/hero-portrait.png" alt="Tromme Now Playing screen" className="w-[70%] sm:w-[34%] max-w-[340px] block" />
-          <img src="/screenshots/artist-details.png" alt="Tromme artist details screen" className="hidden sm:block w-[26%] max-w-[280px] block" />
+        <div ref={shotsRef} className="hero-shots md:hidden mt-14 -mx-5 flex overflow-x-auto snap-x snap-mandatory gap-3" style={{ scrollbarWidth: 'none', paddingInline: 'calc(50% - 130px)', scrollPaddingInline: 'calc(50% - 130px)' }}>
+          {heroShots.map((h) => (
+            <img key={h.src} src={h.src} alt={h.alt} className="snap-center flex-shrink-0 block" style={{ width: 260 }} />
+          ))}
+        </div>
+        <div className="hidden md:flex mt-14 mx-auto items-center justify-center gap-6">
+          {heroShots.map((h, i) => (
+            <img key={h.src} src={h.src} alt={h.alt} className="block" style={{ width: i === 1 ? 360 : 280 }} />
+          ))}
         </div>
       </section>
 

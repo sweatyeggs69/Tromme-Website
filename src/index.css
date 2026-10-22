@@ -108,3 +108,4 @@ body {
 }
 
 .shots::-webkit-scrollbar { display: none; }
+.hero-shots::-webkit-scrollbar { display: none; }
