@@ -80,7 +80,7 @@ export default function TrommeLanding() {
             Your Plex music,
             <br />
             <span style={{ background: 'linear-gradient(90deg, var(--orange-bright), #e8421f)', WebkitBackgroundClip: 'text', backgroundClip: 'text', color: 'transparent' }}>
-              played properly.
+              played your way.
             </span>
           </h1>
           <p className="mt-6 text-[20px] mx-auto max-w-[620px]" style={{ color: 'var(--ink-soft)', lineHeight: 1.5 }}>
