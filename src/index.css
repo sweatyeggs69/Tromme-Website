@@ -2,10 +2,92 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --paper: #faf4ea;
+  --paper-deep: #f3e9d8;
+  --ink: #1b1612;
+  --ink-soft: #5c5148;
+  --line: rgba(27, 22, 18, 0.12);
+  --orange: #d4400f;
+  --orange-bright: #f26a1b;
+}
+
 html, body, #root {
-  height: 100%;
+  min-height: 100%;
   margin: 0;
   padding: 0;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: ui-sans-serif, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection { background: var(--orange-bright); color: #fff; }
+
+.font-display {
+  font-family: ui-serif, "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 22px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 15px;
+  background: var(--orange);
+  color: #fff;
+  text-decoration: none;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+.btn:hover { background: #b8360b; transform: translateY(-1px); }
+.btn-ghost { background: transparent; color: var(--ink); box-shadow: inset 0 0 0 1.5px var(--ink); }
+.btn-ghost:hover { background: var(--ink); color: var(--paper); }
+
+.eyebrow {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--orange);
+}
+
+.card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 28px;
+}
+
+/* Long-form text on Privacy, Terms and Support */
+.tromme-body {
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--ink-soft);
+}
+.tromme-body p { margin: 0 0 1.2em 0; }
+.tromme-body p:last-child { margin-bottom: 0; }
+.tromme-body a, .doc-link { color: var(--orange); text-decoration: underline; text-underline-offset: 3px; }
+.tromme-body strong { color: var(--ink); font-weight: 600; }
+
+.section-heading {
+  font-family: ui-serif, "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  margin-bottom: 14px;
+  padding-top: 20px;
+  border-top: 2px solid var(--ink);
 }
 
 .skip-link {
@@ -14,18 +96,18 @@ html, body, #root {
   left: 8px;
   z-index: 100;
   padding: 10px 16px;
-  border-radius: 9999px;
-  background: #1d1d1f;
+  border-radius: 10px;
+  background: var(--ink);
   color: #fff;
-  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 600;
   text-decoration: none;
   transform: translateY(-200%);
 }
-
 .skip-link:focus {
   transform: none;
-  outline: 2px solid #ff6600;
+  outline: 2px solid var(--orange-bright);
   outline-offset: 2px;
 }
+
+.shots::-webkit-scrollbar { display: none; }
