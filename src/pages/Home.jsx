@@ -47,11 +47,27 @@ const showcase = [
 export default function TrommeLanding() {
   const shotsRef = useRef(null);
 
-  // Start the phone carousel on the middle screenshot.
+  // Always start the phone carousel on the middle screenshot.
   useEffect(() => {
     const el = shotsRef.current;
-    const middle = el && el.children[1];
-    if (middle) el.scrollLeft = middle.offsetLeft - (el.clientWidth - middle.clientWidth) / 2;
+    if (!el) return undefined;
+    const center = () => {
+      const middle = el.children[1];
+      if (!middle) return;
+      const left = middle.getBoundingClientRect().left - el.getBoundingClientRect().left + el.scrollLeft;
+      el.scrollLeft = left - (el.clientWidth - middle.clientWidth) / 2;
+    };
+    center();
+    const raf = requestAnimationFrame(center);
+    const timeout = setTimeout(center, 150);
+    window.addEventListener('pageshow', center);
+    window.addEventListener('load', center);
+    return () => {
+      cancelAnimationFrame(raf);
+      clearTimeout(timeout);
+      window.removeEventListener('pageshow', center);
+      window.removeEventListener('load', center);
+    };
   }, []);
 
   return (
