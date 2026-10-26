@@ -47,6 +47,19 @@ export default function TrommeSupport() {
                 We read every message. Please include your iOS version, Plex Media Server
                 version, and a description of what you expected to happen.
               </p>
+              <p
+                className="mt-3 text-[15px]"
+                style={{ color: 'var(--ink-soft)', lineHeight: 1.5 }}
+              >
+                Feature requests go to{' '}
+                <a
+                  href="mailto:feature@tromme.app"
+                  style={{ color: 'var(--orange)', textDecoration: 'none' }}
+                >
+                  feature@tromme.app
+                </a>
+                .
+              </p>
             </div>
           </div>
         </section>
@@ -142,7 +155,7 @@ export default function TrommeSupport() {
                 <p>
                   Tromme is built by listeners, for listeners. If there's a feature you'd
                   love to see, send us a note at{' '}
-                  <a href="mailto:support@tromme.app">support@tromme.app</a>. We read
+                  <a href="mailto:feature@tromme.app">feature@tromme.app</a>. We read
                   every email and the best ideas tend to make it into the app.
                 </p>
               </div>
