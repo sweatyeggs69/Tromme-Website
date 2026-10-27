@@ -3,7 +3,7 @@ import Layout, { DocHeader } from '../components/Layout.jsx';
 import { services, HISTORY_URL } from '../statusServices.js';
 
 const TIMEOUT_MS = 8000;
-const DAYS = 90;
+const DAYS = 30;
 
 const COLORS = { up: '#2f9e44', degraded: '#e8a317', down: '#d64545', unknown: 'rgba(0,0,0,0.1)' };
 const LABELS = { up: 'Operational', degraded: 'Degraded', down: 'Down', unknown: 'Checking' };
@@ -135,7 +135,7 @@ export default function Status() {
                   <div
                     className="mt-4 flex gap-[2px]"
                     role="img"
-                    aria-label={pct === null ? 'No history yet' : `${pct.toFixed(2)} percent uptime over the last 90 days`}
+                    aria-label={pct === null ? 'No history yet' : `${pct.toFixed(2)} percent uptime over the last 30 days`}
                   >
                     {days.map((d) => (
                       <span
@@ -151,7 +151,7 @@ export default function Status() {
                     ))}
                   </div>
                   <div className="mt-2 flex justify-between text-[12px]" style={{ color: 'var(--ink-soft)' }}>
-                    <span>90 days ago</span>
+                    <span>30 days ago</span>
                     <span>{pct === null ? 'No history yet' : `${pct.toFixed(2)}% uptime`}</span>
                     <span>Today</span>
                   </div>

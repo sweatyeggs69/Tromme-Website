@@ -7,7 +7,7 @@ import { services } from '../src/statusServices.js';
 const file = process.argv[2];
 if (!file) throw new Error('Usage: node scripts/check-status.mjs <history.json>');
 
-const KEEP_DAYS = 90;
+const KEEP_DAYS = 30;
 const KEEP_SAMPLES = 96;
 const TIMEOUT_MS = 10000;
 
