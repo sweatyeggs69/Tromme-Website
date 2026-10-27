@@ -11,7 +11,17 @@ const KEEP_DAYS = 30;
 const KEEP_SAMPLES = 96;
 const TIMEOUT_MS = 10000;
 
-async function check(service) {
+async function check(service, retries = 1) {
+  const result = await attempt(service);
+  // The artwork service answers 503 for a moment while its cache starts up.
+  if (result.state === 'down' && retries > 0) {
+    await new Promise((r) => setTimeout(r, 3000));
+    return check(service, retries - 1);
+  }
+  return result;
+}
+
+async function attempt(service) {
   const started = Date.now();
   try {
     const res = await fetch(service.url, {

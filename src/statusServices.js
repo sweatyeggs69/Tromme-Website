@@ -13,8 +13,9 @@ export const services = [
     detail: 'Apple Music animated album covers',
     url: 'https://amaa.tromme.app/api/v1/status',
     cors: true,
-    // Returns { status: 'operational' | 'degraded' }.
-    read: (body) => (body && body.status === 'operational' ? 'up' : 'degraded'),
+    // Returns { status: 'operational' | 'degraded' }. Only an explicit
+    // "degraded" counts; an unreadable body still means the service answered.
+    read: (body) => (body && body.status === 'degraded' ? 'degraded' : 'up'),
   },
   {
     id: 'lyrics-word',

@@ -15,9 +15,13 @@ async function liveCheck(service) {
   const signal = AbortSignal.timeout(TIMEOUT_MS);
   try {
     if (service.cors) {
-      const res = await fetch(service.url, { signal });
-      if (res.status >= 500) return 'down';
-      return service.read ? service.read(await res.json().catch(() => null)) : 'up';
+      try {
+        const res = await fetch(service.url, { signal });
+        if (res.status >= 500) return 'down';
+        return service.read ? service.read(await res.json().catch(() => null)) : 'up';
+      } catch {
+        // Fall through: a blocked read is not the same as an unreachable host.
+      }
     }
     await fetch(service.url, { mode: 'no-cors', signal, cache: 'no-store' });
     return 'up';
