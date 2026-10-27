@@ -145,19 +145,19 @@ export default function TrommeLanding() {
         </div>
       </section>
 
-      {/* Tromme Plus */}
+      {/* Tromme + */}
       <section className="px-5 pb-20">
         <div
           className="max-w-[1080px] mx-auto rounded-[32px] p-8 md:p-14"
           style={{ background: 'var(--ink)', color: 'var(--paper)' }}
         >
-          <p className="eyebrow" style={{ color: 'var(--orange-bright)' }}>Tromme Plus</p>
+          <p className="eyebrow" style={{ color: 'var(--orange-bright)' }}>Tromme +</p>
           <h2 className="font-display mt-3" style={{ fontSize: 'clamp(30px, 4vw, 44px)' }}>
-            Free to use. Plus if you want more.
+            Free to use. Tromme + if you want more.
           </h2>
           <p className="mt-4 text-[18px] max-w-[620px]" style={{ color: '#d8cdbf', lineHeight: 1.6 }}>
-            Everything above is free. An optional Tromme Plus subscription adds premium app icons
-            and animated album artwork.
+            Everything above is free. An optional Tromme + subscription adds premium app icons,
+            animated album artwork and advanced download options.
           </p>
         </div>
       </section>
