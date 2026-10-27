@@ -1,5 +1,6 @@
 // External services the Tromme app depends on, checked the way the app reaches
-// them: through the Cloudflare Worker proxy at api.tromme.app. Shared by the
+// them: through the Cloudflare Worker proxy at api.tromme.app, except lyrics,
+// which the app calls directly (LRCLIB rate limited the shared proxy IPs). Shared by the
 // status page and scripts/check-status.mjs.
 //
 // `url(nonce)` builds the request. The nonce goes into a query value the proxy
@@ -38,14 +39,14 @@ export const services = [
     id: 'lyrics-word',
     name: 'Synced lyrics (lrc.red)',
     detail: 'Word and line synced lyrics',
-    url: (n) => `${API}/lyrics/lrcred/search?q=${encodeURIComponent(`tromme status ${n}`)}`,
+    url: (n) => `https://lrc.red/search.json?q=${encodeURIComponent(`tromme status ${n}`)}`,
     ok: withLimit(upOr404),
   },
   {
     id: 'lyrics-lrclib',
     name: 'Lyrics (LRCLIB)',
     detail: 'Synced and plain lyrics fallback',
-    url: (n) => `${API}/lyrics/lrclib/search?q=${encodeURIComponent(`tromme status ${n}`)}`,
+    url: (n) => `https://lrclib.net/api/search?q=${encodeURIComponent(`tromme status ${n}`)}`,
     ok: withLimit(upOr404),
   },
   {
