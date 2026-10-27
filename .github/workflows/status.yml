@@ -37,5 +37,5 @@ jobs:
           git config user.name "tromme-status"
           git config user.email "status@tromme.app"
           git add history.json
-          git commit -m "Update status"
+          git commit -m "Update status [skip ci]"
           git push origin status-data
