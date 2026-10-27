@@ -47,6 +47,7 @@ export default function Layout({ children }) {
             <Link to="/privacy" className="hover:underline underline-offset-4">Privacy Policy</Link>
             <Link to="/terms" className="hover:underline underline-offset-4">Terms of Use</Link>
             <Link to="/support" className="hover:underline underline-offset-4">Support</Link>
+            <Link to="/status" className="hover:underline underline-offset-4">Status</Link>
             <a href="mailto:support@tromme.app" className="hover:underline underline-offset-4">Contact</a>
           </div>
         </div>

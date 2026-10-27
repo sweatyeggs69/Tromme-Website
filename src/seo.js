@@ -15,6 +15,11 @@ export const pages = {
     description:
       'Get help with Tromme: answers to common questions, troubleshooting tips for connecting to Plex Media Server, and how to contact support.',
   },
+  '/status': {
+    title: 'Status - Tromme',
+    description:
+      'Live status and 90-day uptime for the services Tromme relies on: animated artwork, synced lyrics, Last.fm and Plex sign-in.',
+  },
   '/privacy': {
     title: 'Privacy Policy - Tromme',
     description:

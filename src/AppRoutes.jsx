@@ -4,6 +4,7 @@ import Home from './pages/Home.jsx';
 import Privacy from './pages/Privacy.jsx';
 import Terms from './pages/Terms.jsx';
 import Support from './pages/Support.jsx';
+import Status from './pages/Status.jsx';
 import NotFound from './pages/NotFound.jsx';
 import { pages, notFound } from './seo.js';
 
@@ -43,6 +44,7 @@ export default function AppRoutes() {
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/terms" element={<Terms />} />
         <Route path="/support" element={<Support />} />
+        <Route path="/status" element={<Status />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </>

@@ -3,7 +3,7 @@ import { renderToString } from 'react-dom/server';
 import { StaticRouter } from 'react-router-dom/server';
 import AppRoutes from './AppRoutes.jsx';
 
-export const routes = ['/', '/privacy', '/terms', '/support'];
+export const routes = ['/', '/privacy', '/terms', '/support', '/status'];
 export { headTags } from './seo.js';
 
 export function render(url) {

@@ -1,0 +1,41 @@
+name: Service status
+
+# Records service health every 15 minutes on the status-data branch, so the
+# history never triggers a website deploy. GitHub may delay scheduled runs.
+on:
+  schedule:
+    - cron: '*/15 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: status
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check out history branch
+        run: |
+          if git ls-remote --exit-code --heads origin status-data; then
+            git clone --depth 1 --branch status-data "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" data
+          else
+            mkdir data && git -C data init -b status-data
+            git -C data remote add origin "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git"
+          fi
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: node scripts/check-status.mjs data/history.json
+      - name: Save history
+        working-directory: data
+        run: |
+          git config user.name "tromme-status"
+          git config user.email "status@tromme.app"
+          git add history.json
+          git commit -m "Update status"
+          git push origin status-data
