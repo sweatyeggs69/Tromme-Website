@@ -13,7 +13,7 @@ const TIMEOUT_MS = 10000;
 
 async function check(service, retries = 1) {
   const result = await attempt(service);
-  // The artwork service answers 503 for a moment while its cache starts up.
+  // One retry so a single dropped request is not recorded as an outage.
   if (result.state === 'down' && retries > 0) {
     await new Promise((r) => setTimeout(r, 3000));
     return check(service, retries - 1);
@@ -24,17 +24,11 @@ async function check(service, retries = 1) {
 async function attempt(service) {
   const started = Date.now();
   try {
-    const res = await fetch(service.url, {
+    const res = await fetch(service.url(started.toString(36)), {
       signal: AbortSignal.timeout(TIMEOUT_MS),
       headers: { 'user-agent': 'tromme-status/1.0 (+https://tromme.app/status)' },
     });
-    const ms = Date.now() - started;
-    if (res.status >= 500) return { state: 'down', ms };
-    if (service.read) {
-      const body = await res.json().catch(() => null);
-      return { state: service.read(body), ms };
-    }
-    return { state: 'up', ms };
+    return { state: service.ok(res.status) ? 'up' : 'down', ms: Date.now() - started };
   } catch {
     return { state: 'down', ms: Date.now() - started };
   }

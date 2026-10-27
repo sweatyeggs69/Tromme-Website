@@ -18,7 +18,7 @@ export const pages = {
   '/status': {
     title: 'Status - Tromme',
     description:
-      'Live status and 30-day uptime for the services Tromme relies on: animated artwork, synced lyrics, Last.fm and Plex sign-in.',
+      'Live status and 30-day uptime for the services Tromme relies on: animated artwork, synced lyrics, Last.fm, Ticketmaster and Plex sign-in.',
   },
   '/privacy': {
     title: 'Privacy Policy - Tromme',

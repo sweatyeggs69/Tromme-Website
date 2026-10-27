@@ -4,30 +4,33 @@ import { services, HISTORY_URL } from '../statusServices.js';
 
 const TIMEOUT_MS = 8000;
 const DAYS = 30;
+const FRESH_MS = 40 * 60 * 1000;
 
 const COLORS = { up: '#2f9e44', degraded: '#e8a317', down: '#d64545', unknown: 'rgba(0,0,0,0.1)' };
 const LABELS = { up: 'Operational', degraded: 'Degraded', down: 'Down', unknown: 'Checking' };
 
-// Live check from the visitor's browser. Services that allow CORS are read in
-// full; the rest are fetched with no-cors, which proves the host answered but
-// hides the response, so any answer counts as up.
+// Browser check. The proxy sends no CORS headers, so the response is hidden:
+// this only proves the host answered, never what it answered.
 async function liveCheck(service) {
-  const signal = AbortSignal.timeout(TIMEOUT_MS);
   try {
-    if (service.cors) {
-      try {
-        const res = await fetch(service.url, { signal });
-        if (res.status >= 500) return 'down';
-        return service.read ? service.read(await res.json().catch(() => null)) : 'up';
-      } catch {
-        // Fall through: a blocked read is not the same as an unreachable host.
-      }
-    }
-    await fetch(service.url, { mode: 'no-cors', signal, cache: 'no-store' });
+    await fetch(service.url(Date.now().toString(36)), {
+      mode: 'no-cors',
+      signal: AbortSignal.timeout(TIMEOUT_MS),
+      cache: 'no-store',
+    });
     return 'up';
   } catch {
     return 'down';
   }
+}
+
+// The scheduled check reads real status codes, so it wins while it is recent.
+function currentState(entry, live) {
+  const last = entry && entry.recent && entry.recent[entry.recent.length - 1];
+  if (last && Date.now() - new Date(last[0]).getTime() < FRESH_MS) {
+    return live === 'down' ? 'down' : last[1];
+  }
+  return live || 'unknown';
 }
 
 function dayList() {
@@ -91,7 +94,8 @@ export default function Status() {
   }, []);
 
   const days = dayList();
-  const states = services.map((s) => live[s.id] || 'unknown');
+  const stateOf = (s) => currentState(history && history.services && history.services[s.id], live[s.id]);
+  const states = services.map(stateOf);
   const summary = overall(states);
 
   return (
@@ -114,7 +118,7 @@ export default function Status() {
             {services.map((s) => {
               const entry = history && history.services && history.services[s.id];
               const pct = uptime(entry);
-              const state = live[s.id] || 'unknown';
+              const state = stateOf(s);
               return (
                 <div
                   key={s.id}
@@ -165,7 +169,7 @@ export default function Status() {
           </div>
 
           <p className="mt-6 text-[13px]" style={{ color: 'var(--ink-soft)', lineHeight: 1.6 }}>
-            The status badges are checked from your browser when this page loads.
+            Services are checked the way the app reaches them, through the Tromme API.
             {history && history.updated
               ? ` History is recorded every 15 minutes, last at ${new Date(history.updated).toLocaleString()}.`
               : ' History is recorded every 15 minutes.'}
