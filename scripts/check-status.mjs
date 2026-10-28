@@ -26,7 +26,7 @@ async function attempt(service) {
   try {
     const res = await fetch(service.url(started.toString(36)), {
       signal: AbortSignal.timeout(TIMEOUT_MS),
-      headers: { 'user-agent': 'tromme-status/1.0 (+https://tromme.app/status)' },
+      headers: { 'user-agent': 'tromme-status/1.0 (+https://tromme.app/status/)' },
     });
     return { state: service.ok(res.status) ? 'up' : 'down', ms: Date.now() - started };
   } catch {

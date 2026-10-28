@@ -13,7 +13,7 @@ import { pages, notFound } from './seo.js';
 function DocumentTitle() {
   const { pathname } = useLocation();
   useEffect(() => {
-    const page = pages[pathname.replace(/\/+$/, '') || '/'] || notFound;
+    const page = pages[pathname.replace(/\/*$/, '/')] || notFound;
     document.title = page.title;
   }, [pathname]);
   return null;

@@ -22,7 +22,7 @@ export default function Layout({ children }) {
             <span className="text-[18px] font-semibold" style={{ letterSpacing: '-0.02em' }}>Tromme</span>
           </Link>
           <nav className="flex items-center gap-6 text-[15px] font-medium" aria-label="Main">
-            <Link to="/support" className="hidden sm:inline hover:underline underline-offset-4">Support</Link>
+            <Link to="/support/" className="hidden sm:inline hover:underline underline-offset-4">Support</Link>
             <a href={APP_STORE_URL} className="btn" style={{ padding: '8px 16px', fontSize: 14 }}>
               Get the app
             </a>
@@ -44,10 +44,10 @@ export default function Layout({ children }) {
             </p>
           </div>
           <div className="flex flex-wrap gap-x-6 gap-y-2 text-[14px] font-medium">
-            <Link to="/privacy" className="hover:underline underline-offset-4">Privacy Policy</Link>
-            <Link to="/terms" className="hover:underline underline-offset-4">Terms of Use</Link>
-            <Link to="/support" className="hover:underline underline-offset-4">Support</Link>
-            <Link to="/status" className="hover:underline underline-offset-4">Status</Link>
+            <Link to="/privacy/" className="hover:underline underline-offset-4">Privacy Policy</Link>
+            <Link to="/terms/" className="hover:underline underline-offset-4">Terms of Use</Link>
+            <Link to="/support/" className="hover:underline underline-offset-4">Support</Link>
+            <Link to="/status/" className="hover:underline underline-offset-4">Status</Link>
             <a href="mailto:support@tromme.app" className="hover:underline underline-offset-4">Contact</a>
           </div>
         </div>

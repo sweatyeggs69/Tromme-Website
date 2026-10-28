@@ -10,22 +10,22 @@ export const pages = {
     description:
       'Tromme is a dedicated iPhone and iPad music player for Plex Media Server with lossless streaming, CarPlay and offline downloads. No Plex Pass required.',
   },
-  '/support': {
+  '/support/': {
     title: 'Support - Tromme',
     description:
       'Get help with Tromme: answers to common questions, troubleshooting tips for connecting to Plex Media Server, and how to contact support.',
   },
-  '/status': {
+  '/status/': {
     title: 'Status - Tromme',
     description:
       'Live status and 30-day uptime for the services Tromme relies on: animated artwork, synced lyrics, Last.fm, Ticketmaster and Plex sign-in.',
   },
-  '/privacy': {
+  '/privacy/': {
     title: 'Privacy Policy - Tromme',
     description:
       'Tromme does not collect, store or transmit personal data. Read how the app handles your Plex sign-in, library data and downloads.',
   },
-  '/terms': {
+  '/terms/': {
     title: 'Terms of Use - Tromme',
     description:
       'The terms for downloading and using Tromme, the Plex music player for iPhone and iPad, including the license, your Plex content and contact details.',

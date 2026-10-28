@@ -20,7 +20,7 @@ Tromme requires iOS or iPadOS 27 or later and a Plex Media Server. It is not aff
 ## Pages
 
 - [Home](https://tromme.app/): Overview, features and download link
-- [Support](https://tromme.app/support): FAQ and troubleshooting
+- [Support](https://tromme.app/support/): FAQ and troubleshooting
 - [Download on the App Store](https://apps.apple.com/us/app/tromme/id6762415193)
 
 ## Contact
@@ -29,5 +29,5 @@ Tromme requires iOS or iPadOS 27 or later and a Plex Media Server. It is not aff
 
 ## Optional
 
-- [Privacy Policy](https://tromme.app/privacy)
-- [Terms of Use](https://tromme.app/terms)
+- [Privacy Policy](https://tromme.app/privacy/)
+- [Terms of Use](https://tromme.app/terms/)
