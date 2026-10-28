@@ -1,10 +1,6 @@
-# Pages are prerendered to dist/<route>/index.html and served at /<route>/.
-# Old extensionless and .html addresses forward to the folder URLs.
-/support /support/ 301
-/support.html /support/ 301
-/status /status/ 301
-/status.html /status/ 301
-/privacy /privacy/ 301
-/privacy.html /privacy/ 301
-/terms /terms/ 301
-/terms.html /terms/ 301
+# Pages are prerendered to dist/<route>/index.html and served at /<route>.
+# wrangler.toml drop-trailing-slash redirects /<route>/; old .html addresses forward here.
+/support.html /support 301
+/status.html /status 301
+/privacy.html /privacy 301
+/terms.html /terms 301

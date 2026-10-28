@@ -118,7 +118,7 @@ export default function TrommeSupport() {
                 <FAQ question="Is my data private?">
                   Yes. Tromme does not collect, store, or transmit any personal data.
                   Your Plex token is stored in the iOS Keychain on your device. See the{' '}
-                  <Link to="/privacy/">Privacy Policy</Link> for details.
+                  <Link to="/privacy">Privacy Policy</Link> for details.
                 </FAQ>
               </div>
             </Section>

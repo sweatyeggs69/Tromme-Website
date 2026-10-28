@@ -1,8 +1,9 @@
 // Renders every route to static HTML after `vite build`, so the page content
 // (headings, landmarks, text) is in the HTML before any JavaScript runs.
-// "/" becomes dist/index.html; "/privacy/" becomes dist/privacy/index.html,
-// which Cloudflare serves at /privacy/ (the same folder URLs as the rest of the
-// fleet). public/_redirects forwards the old /privacy and /privacy.html. Each page gets its own title, description,
+// "/" becomes dist/index.html; "/privacy" becomes dist/privacy/index.html,
+// which Cloudflare serves at /privacy (wrangler.toml html_handling =
+// "drop-trailing-slash" redirects /privacy/ there). public/_redirects
+// forwards the old /privacy.html. Each page gets its own title, description,
 // canonical and JSON-LD from src/seo.js. dist/404.html is served with a 404
 // status for unknown paths (wrangler.toml not_found_handling = "404-page").
 import fs from 'node:fs';
@@ -34,7 +35,7 @@ function page(url, head) {
 
 for (const url of routes) {
   const html = page(url, headTags(url));
-  const file = `${url.slice(1)}index.html`;
+  const file = url === '/' ? 'index.html' : `${url.slice(1)}/index.html`;
   fs.mkdirSync(path.dirname(path.join(dist, file)), { recursive: true });
   fs.writeFileSync(path.join(dist, file), html);
   console.log(`prerendered ${url} -> dist/${file}`);
