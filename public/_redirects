@@ -4,3 +4,7 @@
 /status.html /status 301
 /privacy.html /privacy 301
 /terms.html /terms 301
+
+# html_handling answers /page/ with a 307; make the move to /page a permanent 301.
+# Keep this rule last.
+/:page/ /:page 301
