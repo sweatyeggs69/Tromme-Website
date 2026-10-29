@@ -166,7 +166,7 @@ export default function TrommeLanding() {
       <section id="download" className="px-5 pb-24">
         <div
           className="max-w-[1080px] mx-auto rounded-[32px] px-6 py-20 text-center"
-          style={{ background: 'linear-gradient(160deg, var(--orange-bright), #e8421f)', color: '#fff' }}
+          style={{ background: 'linear-gradient(160deg, #cf400a, #b5360a)', color: '#fff' }}
         >
           <h2 className="font-display" style={{ fontSize: 'clamp(36px, 5vw, 56px)' }}>Get Tromme.</h2>
           <p className="mt-4 text-[19px]">Point it at your Plex server and you're listening in seconds.</p>

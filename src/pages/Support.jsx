@@ -54,7 +54,7 @@ export default function TrommeSupport() {
                 Feature requests go to{' '}
                 <a
                   href="mailto:feature@tromme.app"
-                  style={{ color: 'var(--orange)', textDecoration: 'none' }}
+                  style={{ color: 'var(--orange)', textDecoration: 'underline', textUnderlineOffset: '3px' }}
                 >
                   feature@tromme.app
                 </a>

@@ -8,7 +8,7 @@
   --ink: #0b0b0f;
   --ink-soft: #6a6a73;
   --line: rgba(0, 0, 0, 0.08);
-  --orange: #e2480d;
+  --orange: #cf400a;
   --orange-bright: #f26a1b;
 }
 
@@ -19,6 +19,13 @@ html, body, #root {
 }
 
 html { scroll-behavior: smooth; }
+
+:focus-visible { outline: 2px solid var(--orange); outline-offset: 3px; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
 
 body {
   background: var(--paper);
