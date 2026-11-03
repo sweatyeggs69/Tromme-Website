@@ -1,21 +1,24 @@
 # Tromme
 
-> Tromme is a dedicated music player app for Plex Media Server on iPhone and iPad. It offers lossless streaming, Magic Mix, offline downloads and full CarPlay support, and it works with any standard Plex account with no Plex Pass required.
+> Tromme is a dedicated music player app for Plex Media Server on iPhone and iPad. It offers lossless streaming, word-synced lyrics, crossfade, offline downloads and CarPlay, and it works with any standard Plex account with no Plex Pass required.
 
 Tromme requires iOS or iPadOS 27 or later and a Plex Media Server. It is not affiliated with Plex, Inc. Tromme does not collect, store, or transmit any personal data; the Plex token is stored in the iOS Keychain on the device.
 
 ## Features
 
 - No Plex Pass required: Works with any standard Plex account
-- Full CarPlay support: Home, Artists, Albums and Playlists tabs with alphabet-jump navigation
-- Offline downloads and playback: Download the entire library or use Dynamic mode to save space
-- Lossless streaming: FLAC files are transcoded to lossless ALAC for bit-perfect iOS playback
-- Magic Mix: An infinite playlist generated from the style and genre of the current track
-- Infinite Mode: Automatically extends the queue so the music keeps going
-- Word-synced lyrics: Lyrics highlight word by word as the song plays, pulled automatically from LRCLIB
-- Bio, codec and genre info: Album information, format, bit depth and genre on every album
-- Cellular-aware: Optional cellular transcoding to save data
-- Sound Check: Consistent audio levels with automatic gain adjustment, like ReplayGain
+- Customizable Home: Choose and reorder Plex hubs
+- Lossless streaming: FLAC files are transcoded to lossless ALAC for accurate playback
+- Crossfade: Free, with a length of 3, 5, 7 or 10 seconds
+- Magic Mix and Infinite Mode: Endless playlists and queues based on style, genre and mood
+- Word-synced lyrics: Highlight word by word, saved with downloads for offline use
+- Offline downloads: Songs, albums, playlists or the whole library, plus Music Cache
+- Concerts on artist pages, genre/style/mood tag editing, and Siri ("Play Abbey Road in Tromme")
+- Album details, Sound Check, cellular-aware transcoding and CarPlay
+
+## Tromme Plus
+
+Tromme is free to use. The optional Tromme Plus subscription adds AutoMix (smart crossfades timed from the last lyric of one song to the first of the next), premium app icons, animated album artwork, track trim and higher bitrate downloads.
 
 ## Pages
 

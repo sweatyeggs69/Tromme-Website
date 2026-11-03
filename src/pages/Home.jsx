@@ -3,15 +3,20 @@ import Layout, { APP_STORE_URL } from '../components/Layout.jsx';
 
 const features = [
   { title: 'No Plex Pass required', desc: 'Works with any standard Plex account. No subscription needed.' },
-  { title: 'Full CarPlay support', desc: 'Home, Artists, Albums, and Playlists tabs with alphabet-jump navigation.' },
-  { title: 'Offline downloads', desc: 'Download your entire library or use Dynamic mode to save on space.' },
-  { title: 'Lossless streaming', desc: 'FLAC files transcoded to lossless ALAC for bit-perfect iOS playback.' },
+  { title: 'Customizable Home', desc: 'Choose which Plex hubs appear on Home and reorder them in Settings.' },
+  { title: 'Lossless streaming', desc: 'FLAC files transcoded to lossless ALAC for accurate, drift-free playback.' },
+  { title: 'Crossfade', desc: 'Blend songs together with a length of 3, 5, 7 or 10 seconds. Free for everyone.' },
   { title: 'Magic Mix', desc: 'An infinite playlist generated from the style and genre of your current track.' },
-  { title: 'Infinite Mode', desc: 'Keeps the music going by automatically extending your queue.' },
-  { title: 'Word-synced lyrics', desc: 'Lyrics highlight word by word as the song plays, pulled automatically from LRCLIB.' },
+  { title: 'Infinite Mode', desc: 'Keeps the music going by extending your queue with similar artists, styles and moods.' },
+  { title: 'Word-synced lyrics', desc: 'Lyrics highlight word by word as the song plays, with line-synced fallback. Saved with downloads for offline use.' },
+  { title: 'Offline downloads', desc: 'Download songs, albums, playlists or your whole library. Music Cache keeps your next songs on device.' },
+  { title: 'Concerts', desc: 'See upcoming concerts on artist pages.' },
+  { title: 'Tag editing', desc: 'Edit genre, style and mood tags on artists and albums using your Plex library tags.' },
+  { title: 'Siri', desc: 'Say "Play Abbey Road in Tromme" to start music hands-free.' },
   { title: 'Album details', desc: 'See album information, format, bit-depth, and genre details on every album.' },
-  { title: 'Cellular-aware', desc: 'Optional cellular transcoding for data-saving.' },
   { title: 'Sound Check', desc: 'Keep audio levels consistent with automatic gain adjustments like ReplayGain.' },
+  { title: 'Cellular-aware', desc: 'Optional cellular transcoding for data-saving.' },
+  { title: 'CarPlay', desc: 'Browse Home, Artists, Albums and Playlists in the car.' },
 ];
 
 const heroShots = [
@@ -38,7 +43,7 @@ const showcase = [
   {
     eyebrow: 'Discover',
     title: 'The music keeps going.',
-    text: "Magic Mix generates an infinite playlist from what you're playing. Infinite Mode keeps your queue flowing automatically.",
+    text: "Magic Mix generates an infinite playlist from what you're playing. Infinite Mode keeps your queue flowing, and crossfade blends one song into the next.",
     img: '/screenshots/discover-portrait.png',
     alt: 'Tromme Playing Next queue with shuffle, repeat, and Magic Mix controls',
   },
@@ -84,7 +89,7 @@ export default function TrommeLanding() {
             </span>
           </h1>
           <p className="mt-6 text-[20px] mx-auto max-w-[620px]" style={{ color: 'var(--ink-soft)', lineHeight: 1.5 }}>
-            Lossless streaming, Magic Mix, CarPlay and offline downloads. Free to use, and no Plex Pass required.
+            Lossless streaming, word-synced lyrics, crossfade and offline downloads. Free to use, and no Plex Pass required.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <a href={APP_STORE_URL} className="btn">Download on the App Store</a>
@@ -156,8 +161,9 @@ export default function TrommeLanding() {
             Free to use. Tromme + if you want more.
           </h2>
           <p className="mt-4 text-[18px] max-w-[620px]" style={{ color: '#d8cdbf', lineHeight: 1.6 }}>
-            Everything above is free. An optional Tromme + subscription adds premium app icons,
-            animated album artwork and advanced download options.
+            Everything above is free. An optional Tromme + subscription adds AutoMix, smart
+            crossfades timed from the last lyric of one song to the first of the next, plus premium app
+            icons, animated album artwork, track trim and higher bitrate downloads.
           </p>
         </div>
       </section>

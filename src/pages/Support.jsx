@@ -109,7 +109,7 @@ export default function TrommeSupport() {
                   to lossless ALAC for playback on iOS and iPadOS.
                 </FAQ>
                 <FAQ question="Is CarPlay supported?">
-                  Yes. Tromme ships full CarPlay support.
+                  Yes. Tromme supports CarPlay with Home, Artists, Albums and Playlists.
                 </FAQ>
                 <FAQ question="What is Magic Mix?">
                   Magic Mix generates an infinite playlist based on the style and genre

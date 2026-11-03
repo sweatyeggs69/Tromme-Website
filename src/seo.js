@@ -8,7 +8,7 @@ export const pages = {
   '/': {
     title: 'Tromme - Music Player for Plex',
     description:
-      'Tromme is a dedicated iPhone and iPad music player for Plex Media Server with lossless streaming, CarPlay and offline downloads. No Plex Pass required.',
+      'Tromme is a dedicated iPhone and iPad music player for Plex Media Server with lossless streaming, word-synced lyrics, crossfade and offline downloads. Free, no Plex Pass required.',
   },
   '/support': {
     title: 'Support - Tromme',
