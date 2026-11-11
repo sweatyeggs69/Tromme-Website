@@ -6,17 +6,17 @@ const IMAGE = `${SITE_URL}/screenshots/tromme-icon.png`;
 
 export const pages = {
   '/': {
-    title: 'Tromme - Music Player for Plex',
+    title: 'Tromme - Plex Music Player for iPhone & iPad',
     description:
       'Tromme is a dedicated iPhone and iPad music player for Plex Media Server with lossless streaming, word-synced lyrics, crossfade and offline downloads. Free, no Plex Pass required.',
   },
   '/support': {
-    title: 'Support - Tromme',
+    title: 'Support - Tromme Plex Music Player',
     description:
       'Get help with Tromme: answers to common questions, troubleshooting tips for connecting to Plex Media Server, and how to contact support.',
   },
   '/status': {
-    title: 'Status - Tromme',
+    title: 'Service Status - Tromme Plex Music Player',
     description:
       'Live status and 30-day uptime for the services Tromme relies on: animated artwork, synced lyrics, Last.fm, Ticketmaster and Plex sign-in.',
   },
