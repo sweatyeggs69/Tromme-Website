@@ -125,15 +125,10 @@ export default function Status() {
                   className="rounded-[16px] p-5"
                   style={{ background: '#fff', border: '1px solid var(--line)' }}
                 >
-                  <div className="flex items-start justify-between gap-4">
-                    <div>
-                      <h2 className="text-[17px]" style={{ fontWeight: 600, letterSpacing: '-0.01em' }}>
-                        {s.name}
-                      </h2>
-                      <p className="text-[14px] mt-0.5" style={{ color: 'var(--ink-soft)' }}>
-                        {s.detail}
-                      </p>
-                    </div>
+                  <div className="flex items-center justify-between gap-4">
+                    <h2 className="text-[17px]" style={{ fontWeight: 600, letterSpacing: '-0.01em' }}>
+                      {s.name}
+                    </h2>
                     <div className="flex items-center gap-2 text-[14px] font-medium shrink-0">
                       <Dot state={state} />
                       {LABELS[state]}

@@ -23,7 +23,6 @@ export const services = [
   {
     id: 'api',
     name: 'Tromme API',
-    detail: 'The proxy every service below goes through',
     url: () => `${API}/`,
     // The Worker answers unknown paths with 404 JSON, which proves it is running.
     ok: (s) => s === 404,
@@ -31,42 +30,36 @@ export const services = [
   {
     id: 'artwork',
     name: 'Animated artwork',
-    detail: 'Apple Music animated album covers',
     url: (n) => `${API}/artwork/search?artist=Daft+Punk&album=${encodeURIComponent(`Status ${n}`)}`,
     ok: withLimit(upOr404),
   },
   {
     id: 'lyrics-word',
     name: 'Synced lyrics (lrc.red)',
-    detail: 'Word and line synced lyrics',
     url: (n) => `https://lrc.red/search.json?q=${encodeURIComponent(`tromme status ${n}`)}`,
     ok: withLimit(upOr404),
   },
   {
     id: 'lyrics-lrclib',
     name: 'Lyrics (LRCLIB)',
-    detail: 'Synced and plain lyrics fallback',
     url: (n) => `https://lrclib.net/api/search?q=${encodeURIComponent(`tromme status ${n}`)}`,
     ok: withLimit(upOr404),
   },
   {
     id: 'lastfm',
     name: 'Last.fm',
-    detail: 'Popular track markers',
     url: (n) => `${API}/lastfm/top-tracks?artist=${encodeURIComponent(`tromme status ${n}`)}`,
     ok: withLimit(up200),
   },
   {
     id: 'ticketmaster',
     name: 'Ticketmaster',
-    detail: 'Upcoming concerts',
     url: (n) => `${API}/ticketmaster/events?keyword=${encodeURIComponent(`tromme status ${n}`)}`,
     ok: withLimit(up200),
   },
   {
     id: 'plex',
     name: 'Plex sign-in',
-    detail: 'plex.tv account and server discovery',
     url: () => 'https://plex.tv/',
     ok: (s) => s < 500,
   },
