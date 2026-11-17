@@ -45,7 +45,7 @@ function dayState(counts) {
   if (!counts || !counts[2]) return 'unknown';
   const [up, degraded, total] = counts;
   if (up === total) return 'up';
-  return up + degraded === 0 || up / total < 0.5 ? 'down' : 'degraded';
+  return (total - up - degraded) / total >= 0.5 ? 'down' : 'degraded';
 }
 
 function uptime(entry) {

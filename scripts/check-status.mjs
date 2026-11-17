@@ -10,15 +10,15 @@ if (!file) throw new Error('Usage: node scripts/check-status.mjs <history.json>'
 const KEEP_DAYS = 30;
 const KEEP_SAMPLES = 96;
 const TIMEOUT_MS = 10000;
+const SLOW_MS = 4000;
 
-async function check(service, retries = 1) {
-  const result = await attempt(service);
-  // One retry so a single dropped request is not recorded as an outage.
-  if (result.state === 'down' && retries > 0) {
-    await new Promise((r) => setTimeout(r, 3000));
-    return check(service, retries - 1);
-  }
-  return result;
+// A service that only answers on the retry, or answers slowly, is degraded, not down.
+async function check(service) {
+  const first = await attempt(service);
+  if (first.state !== 'down') return first;
+  await new Promise((r) => setTimeout(r, 3000));
+  const second = await attempt(service);
+  return second.state === 'down' ? second : { ...second, state: 'degraded' };
 }
 
 async function attempt(service) {
@@ -28,7 +28,9 @@ async function attempt(service) {
       signal: AbortSignal.timeout(TIMEOUT_MS),
       headers: { 'user-agent': 'tromme-status/1.0 (+https://tromme.app/status)' },
     });
-    return { state: service.ok(res.status) ? 'up' : 'down', ms: Date.now() - started };
+    const ms = Date.now() - started;
+    if (!service.ok(res.status)) return { state: 'down', ms };
+    return { state: ms > SLOW_MS ? 'degraded' : 'up', ms };
   } catch {
     return { state: 'down', ms: Date.now() - started };
   }
