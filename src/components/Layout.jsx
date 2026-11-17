@@ -1,11 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import OutageBanner from './OutageBanner';
 
 export const APP_STORE_URL = 'https://apps.apple.com/us/app/tromme/id6762415193';
 
 export default function Layout({ children }) {
   return (
     <div className="min-h-screen flex flex-col">
+      <OutageBanner />
       <header
         className="sticky top-0 z-40"
         style={{ borderBottom: '1px solid var(--line)', background: 'rgba(255,255,255,0.8)', backdropFilter: 'saturate(180%) blur(20px)', WebkitBackdropFilter: 'saturate(180%) blur(20px)' }}
