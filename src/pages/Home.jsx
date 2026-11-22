@@ -3,19 +3,29 @@ import Layout, { APP_STORE_URL } from '../components/Layout.jsx';
 
 const features = [
   { title: 'No Plex Pass required', desc: 'Works with any standard Plex account. No subscription needed.' },
-  { title: 'Customizable Home', desc: 'Choose which Plex hubs appear on Home and reorder them in Settings.' },
-  { title: 'Lossless streaming', desc: 'FLAC files transcoded to lossless ALAC for accurate, drift-free playback.' },
+  { title: 'New Home', desc: 'Your whole library on Home, with your Plex profile up top. Choose and reorder sections.' },
+  { title: 'Custom tab bar', desc: 'Pick and reorder your tabs in Settings.' },
+  { title: 'Genres', desc: 'Browse and shuffle any genre.' },
+  { title: 'Artist Mixes', desc: 'Fresh artist stations on Home and CarPlay that change every hour.' },
+  { title: 'Lossless streaming', desc: 'FLAC files play as lossless Apple Lossless for accurate, drift-free playback.' },
   { title: 'Crossfade', desc: 'Blend songs together with a length of 3, 5, 7 or 10 seconds. Free for everyone.' },
-  { title: 'Magic Mix', desc: 'An infinite playlist generated from the style and genre of your current track.' },
+  { title: 'Magic Mix and stations', desc: 'Endless mixes from any song, album or artist, matched by style and mood.' },
   { title: 'Infinite Mode', desc: 'Keeps the music going by extending your queue with similar artists, styles and moods.' },
   { title: 'Word-synced lyrics', desc: 'Lyrics highlight word by word as the song plays, with line-synced fallback. Saved with downloads for offline use.' },
   { title: 'Offline downloads', desc: 'Download songs, albums, playlists or your whole library. Music Cache keeps your next songs on device.' },
+  { title: 'Apple Music artwork', desc: 'Album covers, artist photos and artist logos from Apple Music.' },
+  { title: 'Automatic metadata', desc: 'Tag new albums and artists with Apple Music details and Last.fm moods and styles.' },
+  { title: 'Share cards', desc: 'Share songs and albums as an image with artwork or lyrics.' },
+  { title: 'Playlists grid', desc: 'A grid view for playlists, with more ways to sort.' },
+  { title: 'Search everywhere', desc: 'Search any library list, and sort Artists your way.' },
+  { title: 'Dark mode options', desc: 'Choose true black or dark gray.' },
+  { title: 'Plex Home users', desc: 'Switch users with PIN support. Each user gets their own settings.' },
+  { title: 'iPad sidebar', desc: 'A sidebar for bigger screens.' },
   { title: 'Concerts', desc: 'See upcoming concerts on artist pages.' },
-  { title: 'Tag editing', desc: 'Edit genre, style and mood tags on artists and albums using your Plex library tags.' },
+  { title: 'Tag editing', desc: 'Edit genre, style and mood tags, record labels and artwork right from the app.' },
   { title: 'Siri', desc: 'Say "Play Abbey Road in Tromme" to start music hands-free.' },
-  { title: 'Album details', desc: 'See album information, format, bit-depth, and genre details on every album.' },
+  { title: 'Album details', desc: 'See album information, format, bit depth and genre on every album.' },
   { title: 'Sound Check', desc: 'Keep audio levels consistent with automatic gain adjustments like ReplayGain.' },
-  { title: 'Cellular-aware', desc: 'Optional cellular transcoding for data-saving.' },
   { title: 'CarPlay', desc: 'Browse Home, Artists, Albums and Playlists in the car.' },
 ];
 
@@ -29,21 +39,21 @@ const showcase = [
   {
     eyebrow: 'Your library',
     title: 'Browse everything. Find anything.',
-    text: 'Artists, albums, songs, and playlists organized the way you expect. Search across your entire collection instantly.',
+    text: 'Your whole library on Home, with the tabs you choose. Browse genres, search any list, and see playlists in a grid.',
     img: '/screenshots/library-portrait.png',
     alt: 'Tromme library browsing view',
   },
   {
     eyebrow: 'Playback',
     title: 'Lossless, by default.',
-    text: 'High-fidelity streaming with ALAC transcoding for your FLAC files. Optional cellular transcoding. Advanced queue management.',
+    text: 'High-fidelity streaming with ALAC transcoding for your FLAC files. Resume where you left off, and Repeat loops your whole queue.',
     img: '/screenshots/playback-portrait.png',
     alt: 'Tromme now playing screen with word-synced lyrics',
   },
   {
     eyebrow: 'Discover',
     title: 'The music keeps going.',
-    text: "Magic Mix generates an infinite playlist from what you're playing. Infinite Mode keeps your queue flowing, and crossfade blends one song into the next.",
+    text: "Magic Mix, stations and Artist Mixes match music by style and mood. Infinite Mode keeps your queue flowing, and crossfade blends one song into the next.",
     img: '/screenshots/discover-portrait.png',
     alt: 'Tromme Playing Next queue with shuffle, repeat, and Magic Mix controls',
   },
@@ -162,8 +172,9 @@ export default function TrommeLanding() {
           </h2>
           <p className="mt-4 text-[18px] max-w-[620px]" style={{ color: '#d8cdbf', lineHeight: 1.6 }}>
             Everything above is free. An optional Tromme + subscription adds AutoMix, smart
-            crossfades timed from the last lyric of one song to the first of the next, plus premium app
-            icons, animated album artwork, track trim and higher bitrate downloads.
+            crossfades timed from the last lyric of one song to the first of the next, plus Cleanup
+            Library to match your whole library with Apple Music, premium app icons, animated album
+            artwork, track trim and higher bitrate downloads.
           </p>
         </div>
       </section>

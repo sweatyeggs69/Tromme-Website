@@ -105,15 +105,15 @@ export default function TrommeSupport() {
                   On Wi-Fi, playback defaults to lossless.
                 </FAQ>
                 <FAQ question="Does Tromme support FLAC?">
-                  Yes, but with somne limitations. FLAC files on your server are transcoded
+                  Yes, but with some limitations. FLAC files on your server are transcoded
                   to lossless ALAC for playback on iOS and iPadOS.
                 </FAQ>
                 <FAQ question="Is CarPlay supported?">
                   Yes. Tromme supports CarPlay with Home, Artists, Albums and Playlists.
                 </FAQ>
                 <FAQ question="What is Magic Mix?">
-                  Magic Mix generates an infinite playlist based on the style and genre
-                  of the track you're playing.
+                  Magic Mix generates an endless playlist matched to the style, genre and
+                  mood of the track you're playing.
                 </FAQ>
                 <FAQ question="Is my data private?">
                   Yes. Tromme does not collect, store, or transmit any personal data.

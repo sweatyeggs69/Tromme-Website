@@ -7,18 +7,25 @@ Tromme requires iOS or iPadOS 27 or later and a Plex Media Server. It is not aff
 ## Features
 
 - No Plex Pass required: Works with any standard Plex account
-- Customizable Home: Choose and reorder Plex hubs
-- Lossless streaming: FLAC files are transcoded to lossless ALAC for accurate playback
+- New Home: The whole library on Home with the Plex profile, plus choosable and reorderable sections
+- Custom tab bar, Genres to browse and shuffle, and search on every library list
+- Artist Mixes on Home and CarPlay that change every hour
+- Lossless streaming: FLAC files play as lossless Apple Lossless (ALAC)
 - Crossfade: Free, with a length of 3, 5, 7 or 10 seconds
-- Magic Mix and Infinite Mode: Endless playlists and queues based on style, genre and mood
+- Magic Mix, stations and Infinite Mode: Endless mixes matched by style, genre and mood
 - Word-synced lyrics: Highlight word by word, saved with downloads for offline use
 - Offline downloads: Songs, albums, playlists or the whole library, plus Music Cache
-- Concerts on artist pages, genre/style/mood tag editing, and Siri ("Play Abbey Road in Tromme")
+- Apple Music covers, artist photos and artist logos
+- Automatic metadata: Apple Music details and Last.fm moods and styles for new albums and artists
+- Share songs and albums as an image
+- Playlists grid view with more sorting, iPad sidebar, and true black or dark gray dark modes
+- Plex Home users with PIN support, each with their own settings
+- Concerts on artist pages, tag and artwork editing, and Siri ("Play Abbey Road in Tromme")
 - Album details, Sound Check, cellular-aware transcoding and CarPlay
 
 ## Tromme Plus
 
-Tromme is free to use. The optional Tromme Plus subscription adds AutoMix (smart crossfades timed from the last lyric of one song to the first of the next), premium app icons, animated album artwork, track trim and higher bitrate downloads.
+Tromme is free to use. The optional Tromme Plus subscription adds AutoMix (smart crossfades timed from the last lyric of one song to the first of the next), Cleanup Library (match the whole library with Apple Music), premium app icons, animated album artwork, track trim and higher bitrate downloads.
 
 ## Pages
 
