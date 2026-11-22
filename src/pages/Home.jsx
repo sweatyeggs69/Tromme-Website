@@ -41,7 +41,7 @@ const showcase = [
     title: 'Browse everything. Find anything.',
     text: 'Your whole library on Home, with the tabs you choose. Browse genres, search any list, and see playlists in a grid.',
     img: '/screenshots/library-portrait.png',
-    alt: 'Tromme library browsing view',
+    alt: 'Tromme Home with library rows and Artist Mixes',
   },
   {
     eyebrow: 'Playback',
