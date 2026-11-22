@@ -170,7 +170,7 @@ export default function TrommeLanding() {
           <h2 className="font-display mt-3" style={{ fontSize: 'clamp(30px, 4vw, 44px)' }}>
             Free to use. Tromme + if you want more.
           </h2>
-          <p className="mt-4 text-[18px] max-w-[620px]" style={{ color: '#d8cdbf', lineHeight: 1.6 }}>
+          <p className="mt-4 text-[18px]" style={{ color: '#d8cdbf', lineHeight: 1.6 }}>
             Everything above is free. An optional Tromme + subscription adds AutoMix, smart
             crossfades timed from the last lyric of one song to the first of the next, plus Cleanup
             Library to match your whole library with Apple Music, premium app icons, animated album
