@@ -7,7 +7,7 @@ export default function TrommePrivacy() {
     <Layout>
       <DocHeader
         title="Privacy Policy"
-        intro="Tromme is designed to respect your privacy. We don't collect your data, because we don't need to." updated="April 20, 2026"
+        intro="Tromme has no accounts, no analytics and no ads. Some features look things up online, and this page explains exactly what they send and where." updated="November 23, 2026"
       />
 
               {/* KEY POINTS CARD */}
@@ -30,16 +30,17 @@ export default function TrommePrivacy() {
               </h2>
               <div className="space-y-4">
                 <KeyPoint>
-                  Tromme does not collect, store, or transmit your personal data.
+                  No Tromme account, no analytics, no ads and no tracking.
                 </KeyPoint>
                 <KeyPoint>
-                  Your Plex server credentials are stored only on your device.
+                  Your Plex sign-in is stored only on your device and is only ever sent to Plex.
                 </KeyPoint>
                 <KeyPoint>
-                  No analytics. No tracking. No third-party services.
+                  Your music streams straight from your own Plex Media Server.
                 </KeyPoint>
                 <KeyPoint>
-                  Your music stays between you and your Plex Media Server.
+                  Lyrics, artwork, tags and concert lookups send only artist, album or song
+                  names to the services listed below. Never your name, email or library.
                 </KeyPoint>
               </div>
             </div>
@@ -53,14 +54,16 @@ export default function TrommePrivacy() {
             <Section heading="Information we collect">
               <div className="tromme-body">
                 <p>
-                  <strong>We do not collect any personal information.</strong> Tromme is
-                  designed to operate entirely on your device and in direct communication
-                  with the Plex Media Server that you choose to connect to.
+                  <strong>We do not collect personal information.</strong> There is no
+                  Tromme account to create, and we do not keep a record of who you are,
+                  what you listen to, or how you use the app.
                 </p>
                 <p>
-                  There are no accounts to create with Tromme. There is no server
-                  infrastructure operated by us that processes your listening activity,
-                  library contents, or usage patterns.
+                  Some features need information from the internet, such as lyrics, album
+                  artwork, genre tags, popular songs and upcoming concerts. To find these,
+                  Tromme sends the name of the artist, album or song you are looking at to
+                  the services described below. These lookups are not linked to you,
+                  your Plex account or your device.
                 </p>
               </div>
             </Section>
@@ -69,14 +72,22 @@ export default function TrommePrivacy() {
               <div className="tromme-body">
                 <p>
                   When you sign in to Plex within Tromme, you authenticate directly with
-                  Plex's servers using Plex's own authentication flow. Tromme receives an
-                  authentication token which is stored securely on your device using the
-                  iOS Keychain.
+                  Plex using Plex's own sign-in flow. Tromme receives an authentication
+                  token, which is stored on your device in the iOS Keychain. Tromme also
+                  asks plex.tv for your list of servers and, if you use Plex Home, your
+                  Home users so you can switch between them.
                 </p>
                 <p>
-                  Once authenticated, Tromme communicates directly with your Plex Media
-                  Server to browse your library and stream your music. This traffic does
-                  not pass through any servers operated by us.
+                  Once signed in, Tromme talks to your Plex Media Server to browse your
+                  library, stream and download music, and report what is playing so Plex
+                  can keep your play history and resume position. Plex may route this
+                  connection through its own relay when a direct connection to your server
+                  is not possible. This traffic never passes through servers operated by us.
+                </p>
+                <p>
+                  If you own the Plex server, optional metadata tools can save artwork,
+                  tags, album types and artist details that Tromme finds back to your own
+                  server.
                 </p>
               </div>
             </Section>
@@ -84,24 +95,36 @@ export default function TrommePrivacy() {
             <Section heading="Data stored on your device">
               <div className="tromme-body">
                 <p>
-                  The following information is stored locally on your device and is never
-                  transmitted to us:
+                  The following information is kept on your device and is never sent to us:
                 </p>
                 <p>
-                  <strong>Plex authentication token</strong> — stored in the iOS Keychain,
-                  used only to communicate with your Plex Media Server.
+                  <strong>Plex authentication token.</strong> Stored in the iOS Keychain and
+                  used only to talk to Plex and your Plex Media Server.
                 </p>
                 <p>
-                  <strong>App preferences</strong> — your settings, favorites, and
-                  cellular transcoding preferences, stored in standard iOS app storage.
+                  <strong>App preferences.</strong> Your settings, layout choices and per-song
+                  adjustments such as lyrics timing and trim markers.
                 </p>
                 <p>
-                  <strong>Cached metadata and artwork</strong> — album art and library
-                  metadata may be cached locally to improve performance. This is retrieved
-                  from your Plex server, not from us.
+                  <strong>Downloads and caches.</strong> Songs you download for offline
+                  listening, plus cached artwork, lyrics and library details that help the
+                  app load quickly.
                 </p>
                 <p>
-                  All of this data is removed when you uninstall Tromme.
+                  Uninstalling Tromme removes its downloads, caches and preferences from
+                  your device.
+                </p>
+              </div>
+            </Section>
+
+            <Section heading="iCloud sync">
+              <div className="tromme-body">
+                <p>
+                  Tromme uses iCloud to keep your settings, lyrics timing adjustments and
+                  trim markers the same across your devices. This data is stored in your
+                  own iCloud account by Apple, under Apple's privacy policy. We cannot see
+                  it. Your Plex sign-in is not synced. You can turn off iCloud for Tromme in
+                  your device's iCloud settings.
                 </p>
               </div>
             </Section>
@@ -111,7 +134,37 @@ export default function TrommePrivacy() {
                 <p>
                   Tromme does not use any analytics services, tracking pixels, advertising
                   SDKs, or third-party data collection tools. We don't know when you open
-                  the app, what you listen to, or how you use it — and we prefer it that way.
+                  the app, what you listen to, or how you use it, and we prefer it that way.
+                </p>
+              </div>
+            </Section>
+
+            <Section heading="Tromme's own servers">
+              <div className="tromme-body">
+                <p>
+                  Some lookups go through two small services we run, so that the app never
+                  needs to hold third-party API keys and results can be cached for everyone.
+                </p>
+                <p>
+                  <strong>api.tromme.app</strong> runs on Cloudflare and passes requests on
+                  to Last.fm, Ticketmaster and our artwork service. It receives the artist,
+                  album or song names in the request and, like any website, your IP address.
+                  Your IP address is used only to limit how many requests one device can
+                  make, and is not stored by us. Results are cached by name so repeat
+                  lookups are faster. Request logging is turned off.
+                </p>
+                <p>
+                  <strong>Our artwork service</strong> looks up album artwork, animated
+                  covers, album types, artist photos and artist logos in the Apple Music
+                  catalog. It receives the artist and album names, and your IP address from
+                  api.tromme.app so it can apply the same per-device limit, kept in memory
+                  only. It stores the artwork results it finds by artist and album name so
+                  they can be reused. It does not store IP addresses or anything that
+                  identifies you.
+                </p>
+                <p>
+                  Neither service receives your Plex token, your Plex account details, or
+                  your library.
                 </p>
               </div>
             </Section>
@@ -119,18 +172,49 @@ export default function TrommePrivacy() {
             <Section heading="Third-party services">
               <div className="tromme-body">
                 <p>
-                  <strong>Plex Media Server.</strong> Tromme connects to Plex on your behalf.
-                  Your use of Plex is governed by Plex's own privacy policy, which you can
-                  review at{' '}
+                  <strong>Plex.</strong> Tromme connects to plex.tv and your Plex Media
+                  Server on your behalf. Your use of Plex is governed by Plex's own privacy
+                  policy, which you can review at{' '}
                   <a href="https://www.plex.tv/about/privacy-legal/" target="_blank" rel="noopener noreferrer">
                     plex.tv/about/privacy-legal
                   </a>.
                 </p>
                 <p>
+                  <strong>LRCLIB and lrc.red.</strong> To find lyrics, Tromme sends the song
+                  title and artist name directly from your device to these lyrics services,
+                  which can see your IP address.
+                </p>
+                <p>
+                  <strong>Last.fm.</strong> Popular songs, similar artists and genre or mood
+                  tags come from Last.fm through api.tromme.app. Last.fm receives only the
+                  artist or album name, and does not see your IP address.
+                </p>
+                <p>
+                  <strong>Ticketmaster.</strong> When you open an artist page, Tromme looks
+                  up that artist's upcoming concerts through api.tromme.app. Ticketmaster
+                  receives only the artist name, and does not see your IP address or your
+                  location. If you open a ticket link, that page is governed by
+                  Ticketmaster's own privacy policy.
+                </p>
+                <p>
                   <strong>Apple.</strong> Tromme is distributed through the Apple App Store.
                   Apple may collect information related to app downloads and crashes as
                   part of its platform. This data is not shared with us in a way that
-                  identifies individual users.
+                  identifies individual users. Apple Music catalog lookups are made by our
+                  artwork service, not your device. The artwork and animated covers it finds
+                  are then loaded from Apple's servers, which can see your IP address.
+                </p>
+              </div>
+            </Section>
+
+            <Section heading="Purchases">
+              <div className="tromme-body">
+                <p>
+                  Tromme Plus is sold through the App Store. Apple handles payment, and
+                  Tromme only checks with Apple on your device whether a purchase or
+                  subscription is active. We never see your payment details or Apple
+                  Account. You can manage or cancel a subscription in your Apple Account
+                  settings.
                 </p>
               </div>
             </Section>

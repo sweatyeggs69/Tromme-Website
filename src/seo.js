@@ -23,7 +23,7 @@ export const pages = {
   '/privacy': {
     title: 'Privacy Policy - Tromme',
     description:
-      'Tromme does not collect, store or transmit personal data. Read how the app handles your Plex sign-in, library data and downloads.',
+      'Tromme has no accounts, analytics or ads. Read how the app handles your Plex sign-in, lyrics and artwork lookups, iCloud sync and purchases.',
   },
   '/terms': {
     title: 'Terms of Use - Tromme',
